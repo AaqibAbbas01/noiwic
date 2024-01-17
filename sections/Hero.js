@@ -12,12 +12,12 @@ const Hero = () => {
     <>
       <section className='hero'>
         <div className='container'>
-          <TitleLogo title='creative' caption='7' className='logobg' />
           <h1 className='hero-title'>WE BUILD DIGITAL EXPERIENCES</h1>
 
           <div className='sub-heading'>
             <TitleSm title='WEBSITES' /> <span>.</span>
             <TitleSm title='BRANDING' /> <span>.</span>
+            <TitleSm title='APP DEVELOPMENT' /> <span>.</span>
             <TitleSm title='DIGITAL MARKETING' />
           </div>
         </div>
@@ -26,7 +26,7 @@ const Hero = () => {
         <div className='container'>
           <div className='heading-title'>
             <Title title='The last digital agency you ll ever need' />
-            <p>Suspendisse ut magna porttitor, sollicitudin ligula at, molestie dolor. Vivamus a ligula ut velit placerat egestas at id leo. Nulla ac volutpat nunc. Nulla facilisi. Pellentesque tempus tellusut magna porttitor scelerisque.</p>
+            <p>Noiwic IT Solutions is a dynamic and forward-thinking technology company that specializes in a wide range of digital services. With a passion for innovation and a commitment to excellence, we are your trusted partner for all things IT-related. Our team of experts is dedicated to helping businesses of all sizes thrive in the digital landscape.</p>
           </div>
           <div className='hero-content grid-4'>
             {home.map((item, i) => (

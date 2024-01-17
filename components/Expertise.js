@@ -10,7 +10,7 @@ const Expertise = () => {
         <div className='container'>
           <div className='heading-title'>
             <Title title='Our expertise' />
-            <p>Vivamus a ligula ut velit placerat egestas at id leo. Nulla ac volutpat nunc. Suspendisse ut magna porttitor, sollicitudin ligula at, molestie dolor.</p>
+            <p>At Noiwic IT Solutions, we offer a comprehensive suite of services to meet your digital needs:</p>
           </div>
           <div className='hero-content grid-4'>
             {expertise.map((item) => (

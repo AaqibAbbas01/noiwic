@@ -25,22 +25,22 @@ const SinglePost = () => {
               <img src={post.cover} alt={post.title} width='100%' height='100%' className='round' />
             </div>
             <div className='desc'>
-              <TitleSm title='Phasellus at magna - elit tristique lacinia. Integer a justo vitae arcu fermentum consequat.' />
-              <p className='desc-p'> Nulla iaculis convallis fermentum. Suspendisse eget elit mauris. Phasellus velit nisi, lobortis quis nisi et, venenatis finibus velit. Integer non nibh eget arcu malesuada ullamcorper. Quisque congue ante in consequat auctor. Morbi ut accumsan eros. Mauris semper suscipit mattis. Cras pellentesque a urna ac dictum. Pellentesque blandit, sapien vel faucibus accumsan, ante dui imperdiet nisi, ut tincidunt nulla tortor nec purus.</p>
-              <p className='desc-p'>Suspendisse eget elit mauris. Phasellus velit nisi, lobortis quis nisi et, venenatis finibus velit. Integer non nibh eget arcu malesuada ullamcorper.</p>
-              <p className='desc-p'>Quisque congue ante in consequat auctor. Morbi ut accumsan eros. Mauris semper suscipit mattis. Cras pellentesque a urna ac dictum. Pellentesque blandit, sapien vel faucibus accumsan, ante dui imperdiet nisi, ut tincidunt nulla tortor nec purus.</p>
+              <TitleSm title='One of the UK’s most popular IT online magazines, ComputerWeekly, offers news and analysis on key topics for tech professionals.' />
+              <p className='desc-p'> Started back in 1996, today it is a publication with millions of readers visiting to get the latest tech trends, opinions of market leaders, or in-depth analysis and reviews on digital transformation, regulations like the upcoming GDPR, etc.</p>
+              <p className='desc-p'>Their contributors cover for industries such as healthcare, business services, finances, public sector, manufacturing, retail, media, telecom, transportation.</p>
+              <p className='desc-p'>Topics range from data centers, enterprise software, IT management to automation, blockchain, mobile services, business intelligence software, etc. There’s also an editor’s blog.</p>
             </div>
           </div>
           <Banner />
 
           <div className='heading-title'>
             <div className='desc'>
-              <TitleSm title='Integer a justo vitae arcu fermentum...' />
+              <TitleSm title='Mashable - top news in tech industry' />
 
-              <p className='desc-p'> Phasellus nec tempor neque. In nec finibus lorem, in aliquet risus. Proin elit elit, cursus vel vulputate at, volutpat quis metus. Praesent at blandit tellus.</p>
-              <p className='desc-p'>Morbi finibus velit erat, a pulvinar lacus mollis sit amet. Nulla iaculis convallis fermentum. Suspendisse eget elit mauris. Phasellus velit nisi, lobortis quis nisi et, venenatis finibus velit. Integer non nibh eget arcu malesuada ullamcorper! Quisque congue ante in consequat auctor. Morbi ut accumsan eros. Mauris semper suscipit mattis. Cras pellentesque a urna ac dictum. Pellentesque blandit, sapien vel faucibus accumsan, ante dui imperdiet nisi, ut tincidunt nulla tortor nec purus.</p>
-              <p className='desc-p'>Suspendisse eget elit mauris. Phasellus velit nisi, lobortis quis nisi et, venenatis finibus velit. Integer non nibh eget arcu malesuada ullamcorper.</p>
-              <p className='desc-p'>Quisque congue ante in consequat auctor. Morbi ut accumsan eros. Mauris semper suscipit mattis. Cras pellentesque a urna ac dictum. Pellentesque blandit, sapien vel faucibus accumsan, ante dui imperdiet nisi, ut tincidunt nulla tortor nec purus.</p>
+              <p className='desc-p'> As for the communicative and social side of IT leaders, the ever-entertaining Mashable constantly and fiercely highlights everything tech-related from social media, news, TV and culture.</p>
+              <p className='desc-p'>It proves that business and technology are “mashable” with social networking and fun human nature pieces.</p>
+              <p className='desc-p'>What you can take from this “voice of digital culture” is people’s view on how technology is influencing our lives, and thus a better understanding of user needs and user adoption of certain products.</p>
+              <p className='desc-p'>Mashable is also a source of humor, memes and relevant tech jokes, as well as cultural trends, non-profit activities, climate science, and much more.</p>
             </div>
           </div>
         </div>

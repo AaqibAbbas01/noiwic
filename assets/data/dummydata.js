@@ -23,28 +23,28 @@ export const home = [
 ]
 export const expertise = [
   {
-    id: 1,
+    id: 'webdev',
     title: "Web Design & Development",
-    cover: "../images/e1.jpg",
+    cover: "../images/b1.png",
     desc: [{ text: "Web design" }, { text: "Web development" }, { text: "Custom icons & illustrations" }, { text: "Hosting" }, { text: "Website audit" }],
   },
   {
-    id: 2,
-    title: "Digital Marketing",
-    cover: "../images/e2.jpg",
-    desc: [{ text: "Social media marketing" }, { text: "Marketing campaigns" }, { text: "Markting management" }, { text: "SEO" }],
+    id: 'mobileapp',
+    title: "Mobile App Development",
+    cover: "../images/e2.png",
+    desc: [{ text: "Android App" }, { text: "ios App" }, { text: "React Native App" }, { text: "Flutter App" }],
   },
   {
-    id: 3,
+    id: 'ecommerce',
     title: "E-Commerce",
-    cover: "../images/e3.jpg",
+    cover: "../images/e3.png",
     desc: [{ text: "E-Commerce website design" }, { text: "WooCommerce" }, { text: "Content management" }, { text: "Hosting" }],
   },
   {
     id: 4,
-    title: "Branding & Creative Services",
-    cover: "../images/e4.jpg",
-    desc: [{ text: "Visual identity" }, { text: "Branding for social media" }, { text: "Custom illustrations" }],
+    title: "Digital Marketing",
+    cover: "../images/e4.png",
+    desc: [{ text: "Social media marketing" }, { text: "Marketing campaigns" }, { text: "Markting management" }, { text: "SEO" }],
   },
 ]
 export const testimonial = [
@@ -144,17 +144,17 @@ export const brand = [
 export const blogdata = [
   {
     id: 1,
-    title: "Ligula vel urna accumsan placerat",
+    title: "ComputerWeekly - technology news website",
     cover: "../images/b1.webp",
     catgeory: "INDUSTRY",
-    date: "JANUARY 12, 2023",
+    date: "JANUARY 12, 2024",
   },
   {
     id: 2,
-    title: "Don’t underestimate the lorem ipsum dolor amet",
+    title: "InfoWorld - latest tech news ",
     cover: "../images/b2.jpg",
     catgeory: "TIPS & TRICKS",
-    date: "OCTOBER 20, 2023",
+    date: "JANUARY 02, 2024",
   },
   {
     id: 3,

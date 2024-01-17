@@ -356,6 +356,37 @@ footer {
       @include grid(repeat(3, 1fr), 50px);
     }
   }
+
+/* Global Styles */
+html, body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+}
+
+/* Container for overall page layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Common Styles for Sections */
+.section {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Style for service items */
+.service-item {
+  margin-bottom: 30px;
+}
+
+/* Additional global styles... */
+
+
   .contact {
     .content {
       .left {
