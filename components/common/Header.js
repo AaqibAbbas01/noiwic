@@ -9,6 +9,10 @@ const Header = () => {
   const [activeLink, setActiveLink] = useState("")
   const [open, setOpen] = useState(false)
 
+  const phoneNumber = '9818404363'; // Replace with your phone number
+  const message = encodeURIComponent("Can we arrange a brief call or meeting to talk about my project objectives and how your expertise can make a valuable contribution?  Looking forward to the opportunity to connect and explore potential synergies.");
+
+
   const router = useRouter()
   useEffect(() => {
     setActiveLink(router.pathname)
@@ -44,7 +48,9 @@ const Header = () => {
             <Link href='/contact' className={activeLink == "/contact" ? "activeLink" : "none"}>
               Contact
             </Link>
-            <button className='button-primary'>book a consultation</button>
+            <a href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer">
+              <button className='button-primary'>Book a Consultation</button>
+            </a>
           </nav>
           <button onClick={() => setOpen(!open)}>{open ? <AiOutlineClose size={25} /> : <RiMenu4Line size={25} />}</button>
         </div>

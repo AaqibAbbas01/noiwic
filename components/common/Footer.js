@@ -3,6 +3,10 @@ import { TitleLogo } from "./Title"
 import { BsFacebook } from "react-icons/bs"
 import { AiFillBehanceCircle, AiFillInstagram, AiFillLinkedin } from "react-icons/ai"
 
+const phoneNumber = '9818404363'; // Replace with your phone number
+const message = encodeURIComponent("Can we arrange a brief call or meeting to talk about my project objectives and how your expertise can make a valuable contribution?  Looking forward to the opportunity to connect and explore potential synergies.");
+
+
 const Footer = () => {
   return (
     <>
@@ -20,7 +24,9 @@ const Footer = () => {
               <h3>+91 8178199664</h3>
               <h3>+91 9818404363</h3>
               <br />
-              <button className='button-primary'>Request for quote</button>
+              <a href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer">
+              <button className='button-primary'>Enquire on WhatsApp</button>
+            </a>
             </div>
             <ul>
               <h3>COMPANY</h3>

@@ -1,18 +1,13 @@
 import React from 'react';
-import Image from 'next/image';
 
 const HomePage = () => {
   return (
     <div className="container">
       <style jsx>{`
-        @keyframes typewriter {
-          from { width: 0; }
-          to { width: 100%; }
-        }
-
-        @keyframes blinkTextCursor {
-          from { border-right-color: transparent; }
-          to { border-right-color: black; }
+        @keyframes gradientAnimation {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
 
         .container {
@@ -20,45 +15,44 @@ const HomePage = () => {
           margin: 0 auto;
           padding: 0 15px;
           text-align: center;
-          background-image: url('/images/webdev.png');
-          background-size: cover;
-          background-position: center;
-          font-family: 'Arial Black', Courier, monospace; /* Monospace font */
-        }
-
-        .section {
-            margin-bottom: 50px;
-            color: Red; /* Text color changed to dark green */
-            font-size: 2em; /* Increased text size */
-            border: 10px solid lightgreen; /* Added light green border */
-            padding: 15px; /* Padding added to give space inside the border */
-          }
-
-          .text-background {
-            color: black; /* Text color changed to dark green */
-            font-size: 1.2em; /* Increased text size */
-            background-color: rgba(144, 238, 144, 0.5); /* 50% transparent light green */
-            display: inline-block; /* Makes the background only as wide as the text */
-            padding: 5px; /* Padding around the text */
-            border-radius: 5px; /* Optional: Adds rounded corners to the background */
-          }
-        .typewriter h1 {
-          overflow: hidden; /* Ensures the content is not revealed until the animation */
-          border-right: .15em solid black; /* The typwriter cursor */
-          white-space: nowrap; /* Keeps the content on a single line */
-          margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-          letter-spacing: .15em; /* Adjust as needed */
-          animation: 
-            typewriter 3.5s steps(30, end) 1s 1 normal both,
-            blinkTextCursor 500ms steps(30, end) infinite;
+          background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+          background-size: 400% 400%;
+          animation: gradientAnimation 15s ease infinite;
+          color: white; /* Changed text color to white for better contrast */
+          font-family: 'Arial', sans-serif; /* Updated font family */
         }
 
         .section {
           margin-bottom: 50px;
+          font-size: 1.5em; /* Adjusted text size */
+          padding: 20px; /* Adjusted padding */
+        }
+
+        .text-background {
+          font-size: 1em; 
+          background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+          display: inline-block;
+          padding: 10px;
+          border-radius: 10px; /* Rounded corners */
+          backdrop-filter: blur(5px); /* Added blur effect */
+        }
+
+        .typewriter h1, h2, h3 {
+          overflow: hidden; 
+          white-space: nowrap; 
+          margin: 0 auto; 
+          letter-spacing: .15em;
+          animation: typewriter 3.5s steps(30, end) 1s 1 normal both,
+          blinkTextCursor 500ms steps(30, end) infinite;
         }
 
         .service {
           margin-bottom: 30px;
+          transition: transform 0.3s ease-in-out; /* Added smooth transition for hover */
+        }
+
+        .service:hover {
+          transform: scale(1.05); /* Slightly enlarges the service block on hover */
         }
       `}</style>
 
@@ -132,41 +126,6 @@ const HomePage = () => {
         </div>
         </div>
       </section>
-
-      {/* Mobile Responsiveness */}
-      <section className="section mobileResponsive">
-      <div className="text-background">
-        <h2>Mobile Responsiveness</h2>
-        <p>Ensuring optimal viewing experience across all devices, enhancing user engagement and accessibility.</p>
-        </div>
-      </section>
-
-      {/* Portfolio Section */}
-      <section className="section portfolio">
-      <div className="text-background">
-        <h2>Our Portfolio</h2>
-        <p>Explore our previous projects, showcasing our expertise and creativity.</p>
-        </div>
-        {/* Placeholder for portfolio items */}
-      </section>
-
-      {/* Testimonials */}
-      <section className="section testimonials">
-      <div className="text-background">
-        <h2>Client Testimonials</h2>
-        <p>Hear from our satisfied clients and their experience working with us.</p>
-        </div>
-        {/* Placeholder for testimonials */}
-        </section>
-
-{/* Contact Information */}
-<section className="section contact">
-<div className="text-background">
-    <h2>Contact Us</h2>
-    <p>If you're interested in our services or have any questions, please reach out to us.</p>
-    </div>
-    {/* Placeholder for contact form or contact details */}
-</section>
 
 </>
 

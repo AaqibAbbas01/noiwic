@@ -12,7 +12,7 @@ const Hero = () => {
     <>
       <section className='hero'>
         <div className='container'>
-          <h1 className='hero-title'>WE BUILD DIGITAL EXPERIENCES</h1>
+          <h1 className='hero-title'>WE DEFINE THE FUTURE</h1>
 
           <div className='sub-heading'>
             <TitleSm title='WEBSITES' /> <span>.</span>
@@ -26,7 +26,7 @@ const Hero = () => {
         <div className='container'>
           <div className='heading-title'>
             <Title title='The last digital agency you ll ever need' />
-            <p>Noiwic IT Solutions is a dynamic and forward-thinking technology company that specializes in a wide range of digital services. With a passion for innovation and a commitment to excellence, we are your trusted partner for all things IT-related. Our team of experts is dedicated to helping businesses of all sizes thrive in the digital landscape.</p>
+            <p>Welcome to Noiwic, where innovation is not just a buzzword but the cornerstone of our identity. At Noiwic, we believe in cultivating a dynamic and forward-thinking environment that sparks creativity and drives technological advancements. Our journey is a testament to our unwavering commitment to nurturing innovation at every step.</p>
           </div>
           <div className='hero-content grid-4'>
             {home.map((item, i) => (

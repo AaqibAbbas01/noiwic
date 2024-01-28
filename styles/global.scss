@@ -13,7 +13,7 @@
     left: -40%;
     width: 180%;
     height: 200vh;
-    background-image: url("../assets/images/art-top-cropp.jpg");
+    background-image: url("../assets/images/blackhole.gif");
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -71,6 +71,7 @@
     @include flex(center, space-between, none);
   }
 }
+
 
 //testimonial
 .testimonial {

@@ -5,19 +5,19 @@ import { BiUser } from "react-icons/bi"
 
 export const home = [
   {
-    icon: <AiOutlineCalendar size={25} />,
+    icon: <AiOutlineCalendar size={55} />,
     title: "10+ years of market experience",
   },
   {
-    icon: <TfiRulerPencil size={25} />,
+    icon: <TfiRulerPencil size={55} />,
     title: "Unique technologies & modern approach ",
   },
   {
-    icon: <VscFileSubmodule size={25} />,
-    title: "100+ cuccessful cases in portfolio",
+    icon: <VscFileSubmodule size={55} />,
+    title: "100+ successful cases in portfolio",
   },
   {
-    icon: <BiUser size={25} />,
+    icon: <BiUser size={55} />,
     title: "Customer satisfaction is our top priority",
   },
 ]
@@ -25,7 +25,7 @@ export const expertise = [
   {
     id: 'webdev',
     title: "Web Design & Development",
-    cover: "../images/b1.png",
+    cover: "../images/webdev.png",
     desc: [{ text: "Web design" }, { text: "Web development" }, { text: "Custom icons & illustrations" }, { text: "Hosting" }, { text: "Website audit" }],
   },
   {
@@ -173,9 +173,9 @@ export const blogdata = [
 ]
 export const teamdata = [
   {
-    id: 1,
-    title: "Alexander Black",
-    cover: "../images/t1.jpg",
+    id: "aaqib",
+    title: "Aaqib Abbas",
+    cover: "../images/ceo.jpg",
     post: "FOUNDER, CEO",
   },
   {
