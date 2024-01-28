@@ -8,6 +8,20 @@ $gradient2: linear-gradient(250deg, rgba(255, 85, 219, 1) 24%, rgba(52, 108, 255
 .green {
   color: $green;
 }
+
 .indigo {
   color: $indigo;
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+  .green {
+    color: $green !important;
+  }
+
+  .indigo {
+    color: $indigo !important;
+  }
+
+  /* Additional mobile-specific styles here */
 }

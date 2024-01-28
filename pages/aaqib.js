@@ -64,15 +64,21 @@ const Aaqib = () => {
       <div style={contentStyles}>
         <img src='/images/ceo.jpg' alt='Aaqib Abbas' style={imageStyles} />
         <h1 style={multiColorText}>Aaqib Abbas</h1>
-        <h2 style={{ ...textStyle, color: '#ddd', marginBottom: '15px' }}>CEO of Noiwic</h2>
+        <h2 style={{ ...textStyle, color: '#ddd', marginBottom: '15px' }}>Founder & CTO of Noiwic</h2>
         <p style={textStyle}>
-          Aaqib Abbas, the CEO of Noiwic, has been a prominent figure in the IT industry for over 8 years. His journey began with a solid academic foundation from Delhi Technological University, where he honed his skills in technology and leadership.
+        With an illustrious career spanning over 7 years in the ever-evolving realm of Information Technology, I am both honored and thrilled to serve as the Co-Founder and CTO of Noiwic. My professional journey has been defined by an unwavering commitment to innovation, a relentless pursuit of excellence, and an innate understanding of the rapidly shifting technological landscape.
         </p>
         <p style={textStyle}>
-          Under his stewardship, Noiwic has flourished, diversifying into various domains and establishing a reputation for innovation and excellence. Aaqib's leadership is characterized by a forward-thinking mindset, driving the company towards cutting-edge technological advancements.
+        Throughout my tenure in the industry, I have had the privilege of spearheading an array of transformative projects. These endeavors have ranged from pioneering web and app development ventures to crafting seamless and immersive E-commerce experiences. This diverse and enriching professional odyssey has armed me with invaluable insights, enabling me to adeptly navigate the intricacies of the digital domain.
         </p>
         <p style={textStyle}>
-          Beyond his professional pursuits, Aaqib is passionate about mentoring young talent, fostering a culture of continuous learning and development. His contributions extend beyond Noiwic, impacting the broader tech community through various initiatives and collaborations.
+        The inception of Noiwic was driven by a visionary purpose — not solely to deliver exceptional IT services, but also to catalyze positive change within our community. We are guided by a mission that transcends the mere provision of solutions; it extends to creating an ecosystem where talent flourishes, individuals discover their purpose, and careers ascend to new heights.
+        </p>
+        <p style={textStyle}>
+        As we embark on this remarkable journey, I am exhilarated by the boundless potential of technology. We are poised not only to fulfill the needs of our esteemed clients but also to make a profound impact on IT sector employment. At Noiwic, our team is united by a shared commitment to shatter conventional boundaries, incubate innovation, and cultivate an environment where talent is nurtured, and aspirations are realized.
+        </p>
+        <p style={textStyle}>
+        I extend my heartfelt gratitude for being a cherished part of our narrative. Together, let us architect a future where technology becomes an instrument of transformative change, enriching lives and empowering entire communities. Welcome to Noiwic, where the future is built, one innovation at a time.
         </p>
       </div>
     </div>

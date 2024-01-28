@@ -68,10 +68,16 @@ const Contact = () => {
             </div>
             <ul>
               <li className='icon'>
-                <AiFillInstagram size={50} />
+                {/* Add the Instagram link */}
+                <a href='https://www.instagram.com/noiwicitsolutions' target='_blank' rel='noopener noreferrer'>
+                  <AiFillInstagram size={100} />
+                </a>
               </li>
               <li className='icon'>
-                <AiFillLinkedin size={50} />
+                {/* Add the LinkedIn link */}
+                <a href='https://www.linkedin.com/company/noiwic/' target='_blank' rel='noopener noreferrer'>
+                  <AiFillLinkedin size={100} />
+                </a>
               </li>
             </ul>
           </div>

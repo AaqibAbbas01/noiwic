@@ -1,4 +1,5 @@
 /*  Hero Section */
+/*  Hero Section */
 .hero {
   text-align: center;
   padding: $xl-6 0;
@@ -6,6 +7,8 @@
   height: 90vh !important;
   overflow: hidden !important;
   position: relative;
+  color: white; /* Default text color */
+
   &::before {
     content: "";
     position: absolute;
@@ -19,12 +22,14 @@
     z-index: -1;
     overflow-x: hidden !important;
   }
+
   .hero-title {
     font-size: $xll-3;
     line-height: 115px;
     font-weight: 600;
     margin: $xl-6 0;
   }
+
   .sub-heading {
     display: flex;
     justify-content: center;
@@ -38,6 +43,7 @@
     }
   }
 }
+
 .hero-sec {
   position: relative;
   &::before {
@@ -50,6 +56,44 @@
     z-index: -1;
     background-color: $dark;
     filter: blur(20px);
+  }
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+  .hero {
+    padding-top: $xl-3; /* Adjust padding for smaller screens */
+    height: auto !important; /* Flexible height for mobile devices */
+    color: white; /* Ensuring text is white in mobile view */
+
+    .hero-title {
+      font-size: $xl; /* Smaller font size for mobile */
+      line-height: normal; /* Adjust line height for smaller screens */
+      margin: $xl-3 0; /* Adjust margin for smaller screens */
+    }
+
+    .sub-heading {
+      flex-direction: column; /* Stack elements vertically */
+      .titleSm {
+        margin: $xl-2 0; /* Adjust margin for smaller screens */
+      }
+      span {
+        font-size: $xl; /* Smaller font size for mobile */
+      }
+    }
+
+    &::before {
+      left: 0; /* Adjust background position */
+      width: 100%; /* Full width background */
+      height: 100vh; /* Adjust background height */
+    }
+  }
+
+  .hero-sec {
+    &::before {
+      top: 0; /* Adjust position for mobile */
+      height: 150px; /* Smaller height for the blurred background */
+    }
   }
 }
 
@@ -73,7 +117,7 @@
 }
 
 
-//testimonial
+// Testimonial Section
 .testimonial {
   .card {
     padding: 20px;
@@ -115,6 +159,41 @@
   }
 }
 
+// Media Query for Mobile Devices
+@media screen and (max-width: 768px) {
+  .testimonial {
+    .card {
+      padding: 15px; // Slightly reduced padding
+    }
+    .cards {
+      margin-top: $xl; // Adjusted top margin
+      p {
+        margin-bottom: 20px; // Fixed margin for consistency
+        font-size: 16px; // Adjusted font size for readability
+        line-height: normal; // Normal line height for mobile
+      }
+      .image {
+        @include flex(column, center, none); // Stack image and text vertically
+        .img {
+          width: 100px; // Adjusted image size
+          height: 100px;
+          margin-bottom: 10px; // Space between image and text
+        }
+        .img-text {
+          margin-left: 0; // Remove left margin
+          h3 {
+            font-size: 18px; // Adjusted font size for headings
+          }
+          span {
+            font-size: 12px; // Adjusted font size for subtitles
+          }
+        }
+      }
+    }
+  }
+}
+
+
 //showcase
 .showcase {
   .card-img {
@@ -153,26 +232,31 @@
 }
 
 // footer
+// Footer Styles
 footer {
   position: relative;
   padding: $xll-3 0 0 0;
   border-top: 1px solid rgba($white, 0.2);
   overflow: hidden;
+
   .logobg {
     line-height: 0;
     padding-top: $xl-1;
     margin-bottom: $xll;
   }
+
   h3 {
     font-weight: 400;
     letter-spacing: 2px;
     font-size: $lg;
     margin-bottom: $xl-6;
   }
+
   span,
   p {
     color: rgba($white, 0.5);
   }
+
   ul li a {
     color: rgba($white, 0.5);
     transition: 0.5s ease-in-out;
@@ -182,6 +266,7 @@ footer {
       color: $green;
     }
   }
+
   .connect {
     @include flex(center, space-between, none);
     span {
@@ -189,6 +274,7 @@ footer {
       letter-spacing: 2px;
     }
   }
+
   &::after {
     content: "";
     position: absolute;
@@ -201,6 +287,60 @@ footer {
     background-repeat: no-repeat;
     background-position: center;
     z-index: -1;
+  }
+}
+
+// Media Query for Mobile Devices
+@media screen and (max-width: 768px) {
+  footer {
+    padding: $xl 0 0 0;
+
+    .logobg {
+      margin-bottom: $xl;
+    }
+
+    h3 {
+      font-size: $xl; // Adjusted font size for mobile
+      margin-bottom: $s;
+    }
+
+    ul li a {
+      font-size: $s; // Adjusted font size for links
+      margin-bottom: $s;
+    }
+
+    /* Add this CSS to your stylesheet */
+.brand-content:not(.mobile-view) {
+  height: 200px; /* Adjust the desired height for the web view */
+}
+
+
+    // Media Query for Mobile Devices
+@media screen and (max-width: 768px) {
+  .connect {
+    flex-direction: row; // Align elements horizontally for mobile
+    justify-content: center; // Center elements horizontally
+    align-items: center; // Center elements vertically
+    flex-wrap: wrap; // Enable wrapping of items if space is limited
+
+    // Adjust the spacing for each child element (e.g., span, icon, etc.)
+    > * {
+      margin-top: 0; // Remove additional top margin for mobile
+      margin-right: $xl; // Add some spacing between elements
+    }
+
+    // Remove right margin from the last child to avoid unnecessary spacing on the right edge
+    > *:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+
+
+    &::after {
+      height: 30vh; // Adjust height for mobile view
+    }
   }
 }
 
@@ -364,7 +504,7 @@ html, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: #333;
+  color: #ffffff;
 }
 
 /* Container for overall page layout */

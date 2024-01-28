@@ -3,7 +3,7 @@ import { TitleLogo } from "./Title"
 import { BsFacebook } from "react-icons/bs"
 import { AiFillBehanceCircle, AiFillInstagram, AiFillLinkedin } from "react-icons/ai"
 
-const phoneNumber = '9818404363'; // Replace with your phone number
+const phoneNumber = '8595900509'; // Replace with your phone number
 const message = encodeURIComponent("Can we arrange a brief call or meeting to talk about my project objectives and how your expertise can make a valuable contribution?  Looking forward to the opportunity to connect and explore potential synergies.");
 
 
@@ -21,8 +21,7 @@ const Footer = () => {
               </span>
               <br />
               <br />
-              <h3>+91 8178199664</h3>
-              <h3>+91 9818404363</h3>
+              <h3>+91 8595900509</h3>
               <br />
               <a href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer">
               <button className='button-primary'>Enquire on WhatsApp</button>
@@ -31,59 +30,49 @@ const Footer = () => {
             <ul>
               <h3>COMPANY</h3>
               <li>
-                <Link href='/'>About agency</Link>
+                <Link href='/agency'>About agency</Link>
               </li>
               <li>
-                <Link href='/'>Our team</Link>
+                <Link href='/team'>Our team</Link>
               </li>
               <li>
-                <Link href='/'>Showcase</Link>
+                <Link href='/showcase'>Showcase</Link>
               </li>
               <li>
-                <Link href='/'>Blog</Link>
+                <Link href='/blogs'>Blog</Link>
               </li>
               <li>
-                <Link href='/'>Demo design system</Link>
+                <Link href='/services'>Services</Link>
               </li>
               <li>
-                <Link href='/'>Contact</Link>
+                <Link href='/contact'>Contact</Link>
               </li>
             </ul>
             <ul>
               <h3>SERVICES</h3>
               <li>
-                <Link href='/'>Web Design & Development</Link>
+                <Link href='/webdev'>Web Design & Development</Link>
               </li>
               <li>
-                <Link href='/'>Branding & Creative Services</Link>
+                <Link href='/mobileapp'>Branding & Creative Services</Link>
               </li>
               <li>
-                <Link href='/'>Digital Marketing</Link>
+                <Link href='/digitalmarketing'>Digital Marketing</Link>
               </li>
               <li>
-                <Link href='/'>E-Commerce</Link>
+                <Link href='/ecommerce'>E-Commerce</Link>
               </li>
             </ul>
             <ul>
               <h3>CONNECT</h3>
               <div className='connect'>
                 <li>
-                  <Link href='/'>
-                    <BsFacebook size={25} />
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/'>
-                    <AiFillBehanceCircle size={25} />
-                  </Link>
-                </li>
-                <li>
-                  <Link href='/'>
+                  <Link href='https://www.instagram.com/noiwicitsolutions/'>
                     <AiFillInstagram size={25} />
                   </Link>
                 </li>
                 <li>
-                  <Link href='/'>
+                  <Link href='https://www.linkedin.com/company/noiwic/'>
                     <AiFillLinkedin size={25} />
                   </Link>
                 </li>
@@ -92,12 +81,9 @@ const Footer = () => {
           </div>
           <div className='legal connect py'>
             <div className='text'>
-              <span>© 2023 THE SEVEN. ALL RIGHTS RESERVED.</span>
+              <span>© 2024 NOIWIC IT Solutions</span>
             </div>
             <div className='connect'>
-              <span>GORKCODER COMPANY</span>
-              <span> &nbsp; | &nbsp; </span>
-              <span>TERMS & CONDITIONS</span>
             </div>
           </div>
         </div>
