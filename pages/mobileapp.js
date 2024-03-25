@@ -69,13 +69,19 @@ const HomePage = () => {
           .container {
             padding: 10px;
           }
-
-          h1, .section, .text-background, .service {
-            font-size: 80%; // Reduce font size for mobile screens
+        
+          h1 {
+            font-size: 130%; // Increase font size for mobile screens
+            line-height: 1.2; // Adjust line height for better readability
+            color: #ffffff; // Example color that stands out
           }
-
+        
+          .section, .text-background, .service {
+            font-size: 100%; // Adjusted font size for better readability
+          }
+        
           .text-background {
-            padding: 8px; // Slightly reduce padding for mobile screens
+            padding: 10px;
           }
         }
       `}</style>
@@ -96,14 +102,14 @@ const HomePage = () => {
       <section className="section services">
         <div className="typewriter">
           <div className="text-background">
-            <h2>Our Mobile App Services</h2>
+            <h1>Our Mobile App Services</h1>
           </div>
         </div>
 
         {/* iOS App Development */}
         <div className="service">
           <div className="text-background">
-            <h3>iOS App Development</h3>
+            <h1>iOS App Development</h1>
             <p>Developing high-quality iOS applications with a focus on design, usability, and performance.</p>
           </div>
         </div>
@@ -111,7 +117,7 @@ const HomePage = () => {
         {/* Android App Development */}
         <div className="service">
           <div className="text-background">
-            <h3>Android App Development</h3>
+            <h1>Android App Development</h1>
             <p>Crafting Android apps that offer seamless user experiences, optimized for a wide range of devices.</p>
           </div>
         </div>
@@ -119,7 +125,7 @@ const HomePage = () => {
         {/* Cross-platform Development */}
         <div className="service">
           <div className="text-background">
-            <h3>Cross-platform Development</h3>
+            <h1>Cross-platform Development</h1>
             <p>Building cross-platform mobile applications that ensure consistency and functionality across iOS and Android.</p>
           </div>
         </div>
@@ -127,7 +133,7 @@ const HomePage = () => {
         {/* Hybrid App Development */}
         <div className="service">
           <div className="text-background">
-            <h3>Hybrid App Development</h3>
+            <h1>Hybrid App Development</h1>
             <p>Creating hybrid apps that combine the best of web and native mobile technologies.</p>
           </div>
         </div>

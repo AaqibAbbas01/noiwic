@@ -69,13 +69,19 @@ const HomePage = () => {
           .container {
             padding: 10px;
           }
-
-          h1, .section, .text-background, .service {
-            font-size: 80%; // Reduce font size for mobile screens
+        
+          h1 {
+            font-size: 130%; // Increase font size for mobile screens
+            line-height: 1.2; // Adjust line height for better readability
+            color: #ffffff; // Example color that stands out
           }
-
+        
+          .section, .text-background, .service {
+            font-size: 100%; // Adjusted font size for better readability
+          }
+        
           .text-background {
-            padding: 8px; // Slightly reduce padding for mobile screens
+            padding: 10px;
           }
         }
       `}</style>
@@ -99,14 +105,14 @@ const HomePage = () => {
       <section className="section services">
       <div className="typewriter">
       <div className="text-background">
-        <h2>Our Services</h2>
+        <h1>Our Services</h1>
         </div>
         </div>
 
         {/* Static Websites */}
         <div className="service">
         <div className="text-background">
-          <h3>Static Websites</h3>
+          <h1>Static Websites</h1>
           <p>Our static websites are fast, secure, and easy to maintain, ideal for small businesses and personal portfolios.</p>
         </div>
         </div>
@@ -114,7 +120,7 @@ const HomePage = () => {
         {/* Dynamic Websites */}
         <div className="service">
         <div className="text-background">
-          <h3>Dynamic Websites</h3>
+          <h1>Dynamic Websites</h1>
           <p>Offering interactive features, dynamic websites are perfect for sites requiring frequent updates.</p>
         </div>
         </div>
@@ -122,7 +128,7 @@ const HomePage = () => {
         {/* WordPress Development */}
         <div className="service">
         <div className="text-background">
-          <h3>WordPress Development</h3>
+          <h1>WordPress Development</h1>
           <p>Expertise in creating versatile WordPress sites, from blogs to complex business solutions.</p>
         </div>
         </div>
@@ -130,7 +136,7 @@ const HomePage = () => {
         {/* Shopify Development */}
         <div className="service">
         <div className="text-background">
-          <h3>Shopify Development</h3>
+          <h1>Shopify Development</h1>
           <p>Specializing in building e-commerce sites using Shopify, offering custom designs and functional online stores.</p>
         </div>
         </div>
@@ -138,7 +144,7 @@ const HomePage = () => {
         {/* Wix Websites */}
         <div className="service">
         <div className="text-background">
-          <h3>Wix Websites</h3>
+          <h1>Wix Websites</h1>
           <p>Capable of crafting professional and responsive websites using Wix, tailored to your brand and business needs.</p>
         </div>
         </div>
@@ -146,7 +152,7 @@ const HomePage = () => {
         {/* Functional Websites */}
         <div className="service">
         <div className="text-background">
-          <h3>Functional Websites</h3>
+          <h1>Functional Websites</h1>
           <p>Developing websites with specific functionalities to meet diverse business requirements.</p>
         </div>
         </div>

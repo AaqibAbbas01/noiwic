@@ -69,13 +69,19 @@ const HomePage = () => {
           .container {
             padding: 10px;
           }
-
-          h1, .section, .text-background, .service {
-            font-size: 80%; // Reduce font size for mobile screens
+        
+          h1 {
+            font-size: 130%; // Increase font size for mobile screens
+            line-height: 1.2; // Adjust line height for better readability
+            color: #ffffff; // Example color that stands out
           }
-
+        
+          .section, .text-background, .service {
+            font-size: 100%; // Adjusted font size for better readability
+          }
+        
           .text-background {
-            padding: 8px; // Slightly reduce padding for mobile screens
+            padding: 10px;
           }
         }
       `}</style>
@@ -96,14 +102,14 @@ const HomePage = () => {
       <section className="section services">
         <div className="typewriter">
           <div className="text-background">
-            <h2>Specialized eCommerce Services</h2>
+            <h1>Specialized eCommerce Services</h1>
           </div>
         </div>
 
         {/* Online Store Development */}
         <div className="service">
           <div className="text-background">
-            <h3>Custom Online Store Development</h3>
+            <h1>Custom Online Store Development</h1>
             <p>Our team crafts bespoke online stores that reflect your brand identity, attract customers, and drive sales. Employing responsive design and intuitive UI/UX, we create shopping experiences that are both engaging and efficient.</p>
           </div>
         </div>
@@ -111,7 +117,7 @@ const HomePage = () => {
         {/* Shiprocket Integration */}
         <div className="service">
           <div className="text-background">
-            <h3>Logistics and Courier Integration</h3>
+            <h1>Logistics and Courier Integration</h1>
             <p>We streamline your logistics with Shiprocket integration, offering your customers a variety of shipping options, real-time tracking, and hassle-free returns, enhancing the overall customer experience.</p>
           </div>
         </div>
@@ -119,7 +125,7 @@ const HomePage = () => {
         {/* Product Photoshoot and Videoshoot */}
         <div className="service">
           <div className="text-background">
-            <h3>Professional Product Visualization</h3>
+            <h1>Professional Product Visualization</h1>
             <p>Our team provides professional product photoshoots and videoshoot services. High-quality visuals are crucial for online success, and we ensure your products are showcased in the best possible light.</p>
           </div>
         </div>
@@ -127,7 +133,7 @@ const HomePage = () => {
         {/* Payment Gateway Integration */}
         <div className="service">
           <div className="text-background">
-            <h3>Secure Payment Gateway Integration</h3>
+            <h1>Secure Payment Gateway Integration</h1>
             <p>Security and convenience are key in online transactions. We integrate the most reliable payment gateways to ensure smooth and secure payment processes for your customers.</p>
           </div>
         </div>
@@ -135,7 +141,7 @@ const HomePage = () => {
         {/* SEO and Marketing Strategies */}
         <div className="service">
           <div className="text-background">
-            <h3>eCommerce SEO and Marketing</h3>
+            <h1>eCommerce SEO and Marketing</h1>
             <p>Boost your online presence with our tailored SEO and digital marketing strategies. We help increase your visibility, drive traffic, and convert leads into loyal customers.</p>
           </div>
         </div>
