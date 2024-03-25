@@ -1,19 +1,27 @@
 @import "function";
 
+$green: #00FF00; // Example green color, replace with actual color code you want
+$xl-5: 3rem; // Example size, replace with actual size you want
+
 .title-logo {
-  font-size: $xl-6;
-  -webkit-text-stroke: 1px $white;
-  color: transparent;
+  color: #E6E6E6; // Light grey color for contrast against a dark background
+  font-size: 4rem; // Larger font size for the title
+  font-weight: 700; // Bold font weight for the title
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; // Modern, sans-serif font
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); // Subtle text shadow for depth
+  letter-spacing: 0.1em; // Spacing out the letters to make the title more stylish
+
+  // Styling for span elements inside the .title-logo class
   span {
-    font-size: $xl-5;
-    -webkit-text-stroke: $green;
-    color: $green;
+    font-size: $xl-5; // Smaller font size for the span compared to the title
+    -webkit-text-stroke: 1px $green; // Green text stroke for the span
+    color: $green; // Green text color for the span
   }
 }
 .logobg {
   font-size: $xll;
   span {
-    font-size: 50px;
+    font-size: 30px;
   }
 }
 .titleSm {
@@ -72,6 +80,7 @@
 }
 .card {
   h1 {
+    
     transition: 0.5s;
     &:hover {
       color: $green;
