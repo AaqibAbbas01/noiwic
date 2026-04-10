@@ -13,38 +13,23 @@ $xll: 60px;
 $xll-2: 80px;
 $xll-3: 100px;
 
-$shadow-md: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+$font-display: 'Orbitron', sans-serif;
+$font-body: 'Syne', sans-serif;
+$font-mono: 'Syne Mono', monospace;
+
+$shadow-md: 0 8px 32px rgba(0, 0, 0, 0.4);
+$shadow-glow: 0 0 20px rgba(0, 200, 255, 0.15);
+
+$clip-btn: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
 
 p {
   font-size: $xl-2;
+  font-family: $font-body;
 }
 .desc-p {
   font-size: $lg;
   line-height: $xl-5;
-  color: rgba($white, 0.6);
+  color: $muted;
   margin: $xl-3 0;
-}
-.w-30 {
-  width: 30%;
-}
-.w-40 {
-  width: 40%;
-}
-.w-50 {
-  width: 50%;
-}
-.w-60 {
-  width: 60%;
-}
-.w-70 {
-  width: 70%;
-}
-.round {
-  border-radius: 50px 0 50px 0;
-}
-.ml {
-  margin-left: 50px;
-}
-.mr {
-  margin-left: 50px;
+  font-family: $font-body;
 }

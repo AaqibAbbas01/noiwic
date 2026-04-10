@@ -1,60 +1,112 @@
 header {
-  padding: $s 0;
-  border-bottom: 1px solid rgba($white, 0.2);
-  position: sticky;
+  padding: $sm 0;
+  position: fixed;
   top: 0;
-  backdrop-filter: blur(10px);
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba($dark, 0.8);
+  border-bottom: 1px solid $border;
   z-index: 999;
+
   .container {
     @include flex(center, space-between, none);
+
     nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
       a {
-        margin: 0 $xl-2;
+        font-family: $font-display;
+        font-size: $s;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 8px 16px;
+        transition: color 0.3s ease;
+        color: $muted;
+
+        &:hover {
+          color: $cyan;
+        }
       }
     }
-  }
-}
-.activeLink {
-  position: relative;
-  color: $green;
-  &::after {
-    content: "";
-    position: absolute;
-    top: 48px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: $green;
   }
 }
 
-@media screen and (max-width: 800px) {
+.activeLink {
+  position: relative;
+  color: $cyan !important;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 2px;
+    background-color: $cyan;
+    box-shadow: 0 0 10px rgba($cyan, 0.5);
+  }
+}
+
+.nav-cta {
+  margin-left: 16px;
+}
+
+@media screen and (max-width: 768px) {
   header {
+    background: rgba($dark, 0.95);
+
     nav {
-      display: none;
+      display: none !important;
     }
+
     .openMenu {
-      position: absolute;
-      top: 75px;
+      position: fixed;
+      top: 60px;
       left: 0;
-      width: 100%;
-      height: 40vh;
-      padding: 20px;
-      background: $dark;
-      display: flex;
+      right: 0;
+      bottom: 0;
+      padding: 30px;
+      background: rgba($dark, 0.97);
+      backdrop-filter: blur(20px);
+      display: flex !important;
       flex-direction: column;
+      gap: 0;
       z-index: 999;
+
       a {
-        width: 100%;
         display: block;
-        display: flex;
-        margin-bottom: 30px !important;
+        padding: 16px 0;
+        font-size: $md;
+        color: $muted;
+        border-bottom: 1px solid $border;
+      }
+
+      .nav-cta {
+        margin-left: 0;
+        margin-top: 24px;
+
+        .button-primary {
+          width: 100%;
+          text-align: center;
+          display: block;
+        }
       }
     }
-    .button-primary {
-      display: none;
+
+    .menu-toggle {
+      color: $white;
+      font-size: 24px;
+      cursor: pointer;
+      background: none;
+      border: none;
     }
   }
+
   .activeLink {
     &::after {
       display: none;

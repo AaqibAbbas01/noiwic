@@ -1,8 +1,6 @@
 import { teamdata } from "@/assets/data/dummydata"
 import { Card } from "@/components/common/Card"
-import { Title, TitleSm } from "@/components/common/Title"
-import team from "@/pages/team"
-import React from "react"
+import { Title } from "@/components/common/Title"
 
 const Team = () => {
   return (
@@ -10,8 +8,7 @@ const Team = () => {
       <section className='agency bg-top'>
         <div className='container'>
           <div className='heading-title'>
-            <TitleSm title='MEET OUR TEAM' /> <br />
-            <br />
+            <span className='eyebrow'>MEET OUR TEAM</span>
             <Title title='A team of smart & passionate creatives' className='title-bg' />
           </div>
           <div className='grid-4 py'>

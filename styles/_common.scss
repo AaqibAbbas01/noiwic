@@ -1,89 +1,164 @@
 @import "function";
 
-$green: #00FF00; // Example green color, replace with actual color code you want
-$xl-5: 3rem; // Example size, replace with actual size you want
-
 .title-logo {
-  color: #E6E6E6; // Light grey color for contrast against a dark background
-  font-size: 4rem; // Larger font size for the title
-  font-weight: 700; // Bold font weight for the title
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; // Modern, sans-serif font
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); // Subtle text shadow for depth
-  letter-spacing: 0.1em; // Spacing out the letters to make the title more stylish
-
-  // Styling for span elements inside the .title-logo class
-  span {
-    font-size: $xl-5; // Smaller font size for the span compared to the title
-    -webkit-text-stroke: 1px $green; // Green text stroke for the span
-    color: $green; // Green text color for the span
+  font-family: $font-display;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: $cyan;
+  .gold {
+    color: $gold;
   }
 }
 .logobg {
   font-size: $xll;
-  span {
-    font-size: 30px;
+  .gold {
+    font-size: 50px;
   }
+}
+.logomin {
+  font-size: 1.6rem;
 }
 .titleSm {
   font-size: $xl-3;
   font-weight: 500;
   letter-spacing: 2px;
+  font-family: $font-display;
 }
 .title {
   font-size: $xl-5;
-  font-weight: 500;
-  background: $gradient2;
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  font-weight: 600;
+  font-family: $font-display;
+  color: $white;
+  text-shadow: $glow-cyan;
 }
 .title-bg {
   font-size: 40px;
+  font-family: $font-display;
 }
-.secondary-button,
-.button-primary {
-  text-transform: capitalize;
-  color: $dark;
-  padding: 13px 40px;
-  background-color: $green;
-  font-size: $md;
-  border-radius: 50px;
-  box-shadow: $shadow-md;
-  cursor: pointer;
-}
-.secondary-button {
-  background-color: #171e20;
-  box-shadow: none;
-  color: $white;
-  padding: 20px 60px;
-  font-size: $lg;
+
+.eyebrow {
+  font-family: $font-mono;
+  font-size: $sm;
+  letter-spacing: 3px;
   text-transform: uppercase;
+  color: $cyan;
+  margin-bottom: $xl-2;
+  display: inline-block;
+}
+
+.button-primary {
+  text-transform: uppercase;
+  color: $dark;
+  padding: 14px 36px;
+  background-color: $cyan;
+  font-size: $sm;
+  font-weight: 600;
+  font-family: $font-display;
   letter-spacing: 2px;
-  box-shadow: rgba($dark, 5) 0px 7px 29px 0px;
-  transition: 0.5s ease-in-out;
+  clip-path: $clip-btn;
+  cursor: none;
+  transition: 0.3s ease;
+  border: none;
   &:hover {
-    color: $green;
+    background-color: lighten($cyan, 10%);
+    box-shadow: $shadow-glow;
   }
 }
+.button-ghost {
+  text-transform: uppercase;
+  color: $white;
+  padding: 14px 36px;
+  background: transparent;
+  font-size: $sm;
+  font-weight: 600;
+  font-family: $font-display;
+  letter-spacing: 2px;
+  clip-path: $clip-btn;
+  cursor: none;
+  border: 2px solid $cyan;
+  transition: 0.3s ease;
+  &:hover {
+    background-color: rgba($cyan, 0.1);
+    box-shadow: $shadow-glow;
+  }
+}
+
+.glass-card {
+  background: $glass-bg;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid $glass-border;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: $cyan;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+  &:hover {
+    border-color: rgba($cyan, 0.3);
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.corner-brackets {
+  position: relative;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: $cyan;
+    border-style: solid;
+    opacity: 0.4;
+  }
+  &::before {
+    top: -1px;
+    left: -1px;
+    border-width: 2px 0 0 2px;
+  }
+  &::after {
+    bottom: -1px;
+    right: -1px;
+    border-width: 0 2px 2px 0;
+  }
+}
+
+.section-padding {
+  padding: $xll-3 0;
+}
+
 .heading-title {
   text-align: center;
   max-width: 65%;
   margin: auto;
-  padding-top: $xll-3;
   padding-bottom: $xl-4;
   p {
     margin: $xl-6 0;
-    color: rgba($white, 0.5);
+    color: $muted;
+    font-family: $font-body;
   }
 }
+
 .card {
   h1 {
-    
     transition: 0.5s;
+    font-family: $font-display;
     &:hover {
-      color: $green;
+      color: $cyan;
       cursor: pointer;
     }
   }
@@ -93,13 +168,12 @@ $xl-5: 3rem; // Example size, replace with actual size you want
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 50px 0 50px 0;
     }
   }
   a {
     display: flex;
     align-items: center;
-    color: $indigo;
+    color: $cyan;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-top: $sm;
@@ -108,11 +182,12 @@ $xl-5: 3rem; // Example size, replace with actual size you want
     }
   }
   span {
-    color: rgba($white, 0.4);
+    color: $muted;
     margin-top: $xl-3;
     display: block;
     letter-spacing: 2px;
     font-size: $sm;
+    font-family: $font-mono;
   }
   ul {
     margin-top: $xl-6;
@@ -129,37 +204,7 @@ $xl-5: 3rem; // Example size, replace with actual size you want
   }
 }
 
-.slick-arrow .next,
-.slick-arrow .prev {
-  position: absolute;
-  top: 45%;
-  width: 50px;
-  height: 50px;
-  background-color: $indigo;
-  z-index: 1;
-  border-radius: 50%;
-  @include flex(center, center, none);
-  cursor: pointer;
-  transition: 0.5s ease-in-out;
-}
-.slick-arrow .next {
-  right: -50px;
-}
-.slick-arrow .prev {
-  left: -50px;
-}
-.slick-slider {
-  margin: 0 -15px;
-}
 @media screen and (max-width: 800px) {
-  .slick-arrow .next {
-    top: 0;
-    right: 0;
-  }
-  .slick-arrow .prev {
-    top: 0;
-    left: 85%;
-  }
   .heading-title {
     max-width: 100%;
     padding: 50px 0;

@@ -5,7 +5,7 @@ const AgencyPage = () => {
   return (
     <>
       <Head>
-        <title>About Agency</title>
+        <title>About Agency — NOIWIC IT Solutions</title>
       </Head>
       <Agency />
     </>

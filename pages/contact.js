@@ -1,16 +1,15 @@
 import { Contact } from "@/sections"
 import Head from "next/head"
-import React from "react"
 
-const contact = () => {
+const ContactPage = () => {
   return (
     <>
       <Head>
-        <title>Contact - Noiwic</title>
+        <title>Contact — NOIWIC IT Solutions</title>
       </Head>
       <Contact />
     </>
   )
 }
 
-export default contact
+export default ContactPage

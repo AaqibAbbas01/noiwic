@@ -1,8 +1,5 @@
-import { blog } from "@/assets/data/dummydata"
 import BlogCard from "@/components/BlogCard"
-import { Card } from "@/components/common/Card"
-import { Title, TitleSm } from "@/components/common/Title"
-import React from "react"
+import { Title } from "@/components/common/Title"
 
 const Blog = () => {
   return (
@@ -10,8 +7,7 @@ const Blog = () => {
       <section className='agency bg-top'>
         <div className='container'>
           <div className='heading-title'>
-            <TitleSm title='BLOG' /> <br />
-            <br />
+            <span className='eyebrow'>BLOG</span>
             <Title title='Our views on marketing, design & technology' />
           </div>
           <BlogCard />

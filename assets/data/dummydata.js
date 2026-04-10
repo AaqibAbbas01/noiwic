@@ -1,176 +1,131 @@
-import { AiOutlineCalendar } from "react-icons/ai"
-import { TfiRulerPencil } from "react-icons/tfi"
-import { VscFileSubmodule } from "react-icons/vsc"
-import { BiUser } from "react-icons/bi"
-
-export const home = [
+export const services = [
   {
-    icon: <AiOutlineCalendar size={55} />,
-    title: "10+ years of market experience",
-  },
-  {
-    icon: <TfiRulerPencil size={55} />,
-    title: "Unique technologies & modern approach ",
-  },
-  {
-    icon: <VscFileSubmodule size={55} />,
-    title: "100+ successful cases in portfolio",
-  },
-  {
-    icon: <BiUser size={55} />,
-    title: "Customer satisfaction is our top priority",
-  },
-]
-export const expertise = [
-  {
-    id: 'webdev',
+    icon: "🌐",
     title: "Web Design & Development",
-    cover: "../images/webdev.png",
-    desc: [{ text: "Web design" }, { text: "Web development" }, { text: "Custom icons & illustrations" }, { text: "Hosting" }, { text: "Website audit" }],
+    desc: "High-performance websites with modern stacks, responsive design, and pixel-perfect execution.",
+    link: "/webdev",
   },
   {
-    id: 'mobileapp',
+    icon: "📱",
     title: "Mobile App Development",
-    cover: "../images/e2.png",
-    desc: [{ text: "Android App" }, { text: "ios App" }, { text: "React Native App" }, { text: "Flutter App" }],
+    desc: "Native and cross-platform mobile apps for iOS and Android with React Native and Flutter.",
+    link: "/mobileapp",
   },
   {
-    id: 'ecommerce',
-    title: "E-Commerce",
-    cover: "../images/e3.png",
-    desc: [{ text: "E-Commerce website design" }, { text: "WooCommerce" }, { text: "Content management" }, { text: "Hosting" }],
+    icon: "🤖",
+    title: "AI Agents & Automation",
+    desc: "Intelligent AI agents that automate customer interactions, bookings, and operations 24/7.",
+    highlighted: true,
+    link: "/ai-agents",
   },
   {
-    id: 'digitalmarketing',
+    icon: "🛒",
+    title: "E-Commerce Solutions",
+    desc: "End-to-end e-commerce platforms with payment integration, inventory, and analytics.",
+    link: "/ecommerce",
+  },
+  {
+    icon: "📈",
     title: "Digital Marketing",
-    cover: "../images/e4.png",
-    desc: [{ text: "Social media marketing" }, { text: "Marketing campaigns" }, { text: "Markting management" }, { text: "SEO" }],
+    desc: "Data-driven SEO, social media campaigns, PPC advertising, and growth strategies.",
+    link: "/digitalmarketing",
+  },
+  {
+    icon: "🎨",
+    title: "Branding & Identity",
+    desc: "Complete brand identity systems including logos, guidelines, and visual language.",
+    link: "/branding",
+  },
+  {
+    icon: "☁️",
+    title: "SaaS Development",
+    desc: "Scalable SaaS platforms with multi-tenant architecture, billing, and analytics dashboards.",
+    highlighted: true,
+    link: "/saas",
+  },
+  {
+    icon: "📊",
+    title: "CRM & Analytics",
+    desc: "Custom CRM systems and analytics dashboards to track, measure, and optimize business growth.",
+    highlighted: true,
+    link: "/crm",
   },
 ]
+
+export const projects = [
+  {
+    name: "KarobarX",
+    url: "https://www.karobarx.in/",
+    favicon: "https://www.karobarx.in/favicon.ico",
+    category: "SaaS · AI Business Growth",
+    badge: "NEW",
+    description: "AI-powered business growth engine for small businesses in India. Captures leads from Facebook & WhatsApp, manages inventory in real-time, and automates marketing — all in one affordable platform. Features AI lead scoring, WhatsApp broadcast campaigns, and a smart analytics dashboard.",
+    tags: ["AI/ML", "WhatsApp API", "CRM", "Marketing Automation", "Next.js", "India Market"],
+    filter: "saas",
+  },
+  {
+    name: "SkillsXAI",
+    url: "https://www.skillsxai.com/",
+    favicon: "https://www.skillsxai.com/logo.svg",
+    category: "EdTech · AI Learning Platform",
+    badge: "HOT",
+    description: "India's leading AI learning platform. Offers 3-day intensive AI workshops for school students (Classes 9–12) and job-ready professional upskilling courses with 100% placement assistance. Programs include AI Agents, QA Automation, Data Analytics, and Digital Marketing. 500+ students trained across 10+ cities.",
+    tags: ["EdTech", "AI Curriculum", "100% Placement", "School Programs", "New Delhi"],
+    filter: "education",
+  },
+  {
+    name: "AAP Qatar",
+    url: "https://aapqatar.com/",
+    favicon: "https://aapqatar.com/favicon.ico",
+    category: "Corporate Web · Retail & Hypermarket",
+    badge: null,
+    description: "Digital presence for Al Ansari Group — one of Qatar's oldest and most respected retail conglomerates with 48+ years of heritage. Operates 7 Retail Mart Hypermarket outlets and the flagship New Indian Supermarket, serving 15,000+ customers daily across Doha.",
+    tags: ["Corporate Website", "Qatar Market", "Retail & FMCG", "48+ Year Brand", "Doha"],
+    filter: "ecommerce",
+  },
+  {
+    name: "HiringRound",
+    url: "https://hiringround.online/",
+    favicon: "https://hiringround.online/favicon.ico",
+    category: "HRTech · Interview Outsourcing",
+    badge: "NEW",
+    description: "A specialized HRTech platform for technical interview outsourcing. Enables companies to delegate candidate screening and technical assessments to expert interviewers — dramatically reducing time-to-hire, eliminating internal interviewer fatigue, and improving candidate quality.",
+    tags: ["HRTech", "Interview Outsourcing", "Recruitment", "SaaS Platform", "Talent Assessment"],
+    filter: "hiring",
+  },
+  {
+    name: "Shah-e-Mardan Dargah",
+    url: "https://shahemardan.vercel.app/",
+    favicon: "https://shahemardan.vercel.app/favicon.ico",
+    category: "Heritage Web · Cultural & Spiritual",
+    badge: null,
+    description: "A beautifully crafted digital experience for Dargah Shah-e-Mardan — India's oldest Shia shrine (~700 years old) in Jorbagh, New Delhi. Features interactive photo gallery, bilingual content in Urdu & English, visitor guide, sacred events calendar, and architectural documentation.",
+    tags: ["Heritage Website", "Bilingual Urdu/English", "Cultural Preservation", "Next.js", "700-Year Legacy"],
+    filter: "web",
+  },
+]
+
 export const testimonial = [
   {
     id: 1,
     name: "Shabbir Hasan",
-    cover: "../images/e1.jpg",
-    post: "Rotobake - Managing Director",
-    desc: "Noiwic IT Solutions has transformed our business with their cutting-edge technology solutions. Exceptional service!",
+    post: "Managing Director · Rotobake",
+    desc: "Noiwic IT Solutions has transformed our business with their cutting-edge technology solutions. Exceptional service and delivery!",
   },
   {
     id: 2,
-    name: "Md. Ahmed",
-    cover: "../images/e2.jpg",
-    post: "LEANPORT - marketing manager",
-    desc: "Prompt and reliable - Noiwic IT Solutions has been our trusted partner for all our IT needs.",
+    name: "Ashish Saxena",
+    post: "CTO · RedDoorz",
+    desc: "Reliable, responsive, and resourceful — Noiwic IT Solutions is the best in the business. They delivered beyond expectations.",
   },
   {
     id: 3,
     name: "Alexander Black",
-    cover: "../images/e3.jpg",
-    post: "Seven consulting - CEO",
-    desc: "Efficient and professional - Noiwic IT Solutions is the backbone of our IT infrastructure.",
-  },
-  {
-    id: 4,
-    name: "Ashish Saxena",
-    cover: "../images/e4.jpg",
-    post: "Reddoorz - C.T.O",
-    desc: "CReliable, responsive, and resourceful - Noiwic IT Solutions is the best in the business.",
+    post: "CEO · Seven Consulting",
+    desc: "Efficient and professional. Noiwic IT Solutions is the backbone of our IT infrastructure and our go-to agency for everything digital.",
   },
 ]
-export const showcase = [
-  {
-    id: "contact",
-    title: "Neon Lights",
-    cover: "../images/s1.jpg",
-    catgeory: "DIGITAL MARKETING",
-  },
-  {
-    id: "contact",
-    title: "Futuristic Furniture",
-    catgeory: "WEBSITES",
-    cover: "../images/s2.jpg",
-  },
-  {
-    id: "contact",
-    title: "Smart Living",
-    cover: "../images/s3.jpg",
-    catgeory: "WEBSITES",
-  },
-  {
-    id: "contact",
-    title: "Light Painting",
-    cover: "../images/s4.jpg",
-    catgeory: "BRANDING	",
-  },
-  {
-    id: "contact",
-    title: "Ideabox",
-    cover: "../images/s5.jpg",
-    catgeory: "BRANDING	",
-  },
-  {
-    id: "contact",
-    title: "VR Experience",
-    cover: "../images/s6.jpg",
-    catgeory: "WEBSITES	",
-  },
-]
-export const brand = [
-  {
-    id: 1,
-    cover: "../images/l1.svg",
-  },
-  {
-    id: 2,
-    cover: "../images/l2.png",
-  },
-  {
-    id: 3,
-    cover: "../images/l3.svg",
-  },
-  {
-    id: 4,
-    cover: "../images/l4.png",
-  },
-  {
-    id: 5,
-    cover: "../images/l5.png",
-  },
-  {
-    id: 6,
-    cover: "../images/l6.png",
-  },
-]
-export const blogdata = [
-  {
-    id: 1,
-    title: "ComputerWeekly - technology news website",
-    cover: "../images/b1.webp",
-    catgeory: "INDUSTRY",
-    date: "JANUARY 12, 2024",
-  },
-  {
-    id: 2,
-    title: "InfoWorld - latest tech news ",
-    cover: "../images/b2.jpg",
-    catgeory: "TIPS & TRICKS",
-    date: "JANUARY 02, 2024",
-  },
-  {
-    id: 3,
-    title: "Building the real VR lorem ipsum dolor amet glavrida from a scratch",
-    cover: "../images/b3.jpg",
-    catgeory: "TIPS & TRICKS",
-    date: "OCTOBER 9, 2023",
-  },
-  {
-    id: 4,
-    title: "What eleifend posuere tincidunt",
-    cover: "../images/b4.jpg",
-    catgeory: "EVENTS",
-    date: "OCTOBER 8, 2023",
-  },
-]
+
 export const teamdata = [
   {
     id: "aaqib",
@@ -190,11 +145,77 @@ export const teamdata = [
     cover: "../images/cofounder.jpg",
     post: "CO-FOUNDER, CEO",
   },
-  
   {
     id: "contact",
     title: "Join our team!",
     cover: "../images/t8.jpg",
     post: "",
+  },
+]
+
+export const expertise = [
+  {
+    id: 'webdev',
+    title: "Web Design & Development",
+    cover: "../images/webdev.png",
+    desc: [{ text: "Web design" }, { text: "Web development" }, { text: "Custom icons & illustrations" }, { text: "Hosting" }, { text: "Website audit" }],
+  },
+  {
+    id: 'mobileapp',
+    title: "Mobile App Development",
+    cover: "../images/e2.png",
+    desc: [{ text: "Android App" }, { text: "iOS App" }, { text: "React Native App" }, { text: "Flutter App" }],
+  },
+  {
+    id: 'ecommerce',
+    title: "E-Commerce",
+    cover: "../images/e3.png",
+    desc: [{ text: "E-Commerce website design" }, { text: "WooCommerce" }, { text: "Content management" }, { text: "Hosting" }],
+  },
+  {
+    id: 'digitalmarketing',
+    title: "Digital Marketing",
+    cover: "../images/e4.png",
+    desc: [{ text: "Social media marketing" }, { text: "Marketing campaigns" }, { text: "Marketing management" }, { text: "SEO" }],
+  },
+]
+
+export const brand = [
+  { id: 1, cover: "../images/l1.svg" },
+  { id: 2, cover: "../images/l2.png" },
+  { id: 3, cover: "../images/l3.svg" },
+  { id: 4, cover: "../images/l4.png" },
+  { id: 5, cover: "../images/l5.png" },
+  { id: 6, cover: "../images/l6.png" },
+]
+
+export const blogdata = [
+  {
+    id: 1,
+    title: "How AI Agents Are Revolutionizing Customer Service in 2025",
+    cover: "../images/b1.webp",
+    category: "AI & AUTOMATION",
+    date: "MARCH 15, 2025",
+  },
+  {
+    id: 2,
+    title: "Building Scalable SaaS Products: Lessons from 5 Live Platforms",
+    cover: "../images/b2.jpg",
+    category: "ENGINEERING",
+    date: "FEBRUARY 28, 2025",
+  },
+  {
+    id: 3,
+    title: "The Future of E-Commerce: Trends Every Business Must Know",
+    cover: "../images/b3.jpg",
+    category: "INDUSTRY",
+    date: "JANUARY 20, 2025",
+  },
+  {
+    id: 4,
+    title: "Why Every Restaurant in Dubai Needs a WhatsApp AI Agent",
+    cover: "../images/b4.jpg",
+    category: "CASE STUDY",
+    date: "JANUARY 5, 2025",
   },
 ]

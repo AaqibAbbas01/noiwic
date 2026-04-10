@@ -1,25 +1,34 @@
-import React from "react"
-import { Title } from "./common/Title"
-import { expertise } from "@/assets/data/dummydata"
-import { Card } from "./common/Card"
+import { services } from "@/assets/data/dummydata"
+import { Title } from "@/components/common/Title"
+import Link from "next/link"
 
 const Expertise = () => {
   return (
-    <>
-      <section className='expertise'>
-        <div className='container'>
-          <div className='heading-title'>
-            <Title title='Our expertise' />
-            <p>At Noiwic IT Solutions, we offer a comprehensive suite of services to meet your digital needs:</p>
-          </div>
-          <div className='hero-content grid-4'>
-            {expertise.map((item) => (
-              <Card data={item} key={item.id} caption='learn more' />
-            ))}
-          </div>
+    <section className="services-section section-padding">
+      <div className="container">
+        <div className="heading-title">
+          <span className="eyebrow">What We Do</span>
+          <Title title="Our Services" />
+          <p>From concept to deployment, we deliver end-to-end digital solutions that drive growth and transform businesses.</p>
         </div>
-      </section>
-    </>
+
+        <div className="services-grid">
+          {services.map((item, i) => (
+            <Link href={item.link || '#'} key={i} className="service-card-link">
+              <div
+                className={`service-card fade-in-up stagger-${i + 1} ${item.highlighted ? 'highlighted' : ''}`}
+              >
+                <div className="bracket-tl" />
+                <span className="service-icon">{item.icon}</span>
+                <h3 className="service-title">{item.title}</h3>
+                <p className="service-desc">{item.desc}</p>
+                <span className="service-arrow">&rarr;</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
 

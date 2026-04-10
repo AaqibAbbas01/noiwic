@@ -1,6 +1,6 @@
 {
-  "name": "creative-agency",
-  "version": "0.1.0",
+  "name": "noiwic-website",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -9,14 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "body-parser": "^1.20.2",
     "next": "^13.5.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.8.0",
-    "react-responsive-carousel": "^3.2.23",
-    "react-slick": "^0.29.0",
-    "sass": "^1.61.0",
-    "slick-carousel": "^1.8.1"
+    "sass": "^1.61.0"
   }
 }

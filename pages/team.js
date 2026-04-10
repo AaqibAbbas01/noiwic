@@ -1,16 +1,15 @@
 import { Team } from "@/sections"
 import Head from "next/head"
-import React from "react"
 
-const team = () => {
+const TeamPage = () => {
   return (
     <>
       <Head>
-        <title>Team - Noiwic</title>
+        <title>Team — NOIWIC IT Solutions</title>
       </Head>
       <Team />
     </>
   )
 }
 
-export default team
+export default TeamPage

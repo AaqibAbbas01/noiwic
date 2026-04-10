@@ -1,16 +1,15 @@
 import { ShowCase } from "@/sections"
 import Head from "next/head"
-import React from "react"
 
-const showcase = () => {
+const ShowcasePage = () => {
   return (
     <>
       <Head>
-        <title>ShowCase - 7Creative</title>
+        <title>Showcase — NOIWIC IT Solutions</title>
       </Head>
       <ShowCase />
     </>
   )
 }
 
-export default showcase
+export default ShowcasePage

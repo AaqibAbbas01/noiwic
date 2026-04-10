@@ -1,168 +1,272 @@
-import React from 'react';
+import Head from 'next/head'
+import { Title } from '@/components/common/Title'
+import { useEffect, useRef, useCallback } from 'react'
 
-const HomePage = () => {
+const phoneNumber = '9818404363'
+const waMsg = encodeURIComponent("Hi, I'm interested in web development services from NOIWIC.")
+
+const serviceItems = [
+  {
+    icon: "🌐",
+    title: "Custom Web Applications",
+    desc: "Full-stack web applications engineered with React, Next.js, Node.js, and TypeScript — built for scale, speed, and maintainability from day one.",
+    features: ["Server-side rendering & SSG", "REST & GraphQL APIs", "Role-based auth & security", "Real-time data with WebSockets"],
+  },
+  {
+    icon: "⚡",
+    title: "Progressive Web Apps",
+    desc: "Installable, offline-capable PWAs that deliver native-like experiences on any device with blazing-fast load times and push notifications.",
+    features: ["Service worker caching", "Offline functionality", "Push notifications", "App-like navigation"],
+  },
+  {
+    icon: "🎨",
+    title: "UI/UX Design & Prototyping",
+    desc: "Research-backed interface design with interactive prototypes in Figma, validated through user testing before a single line of code is written.",
+    features: ["Wireframing & mockups", "Interactive prototypes", "Usability testing", "Design system creation"],
+  },
+  {
+    icon: "📝",
+    title: "CMS & WordPress Development",
+    desc: "Content-managed websites on WordPress, Strapi, or Sanity with custom themes, plugins, and headless architectures for editorial teams.",
+    features: ["Custom theme development", "Plugin/module creation", "Headless CMS integration", "Content migration"],
+  },
+  {
+    icon: "🛍️",
+    title: "Shopify & E-Commerce Storefronts",
+    desc: "Conversion-optimized Shopify stores with custom Liquid themes, checkout customization, and seamless third-party app integrations.",
+    features: ["Custom Liquid themes", "Checkout optimization", "App integrations", "Inventory sync"],
+  },
+  {
+    icon: "🔍",
+    title: "Performance & SEO Audits",
+    desc: "Comprehensive site audits covering Core Web Vitals, accessibility compliance (WCAG 2.1), technical SEO, and actionable optimization roadmaps.",
+    features: ["Core Web Vitals optimization", "Accessibility (WCAG 2.1)", "Technical SEO audit", "Lighthouse 90+ scores"],
+  },
+]
+
+const techStack = [
+  "React", "Next.js", "Vue.js", "Angular", "Node.js", "TypeScript",
+  "Tailwind CSS", "WordPress", "Shopify", "PostgreSQL", "MongoDB",
+  "GraphQL", "Docker", "Vercel", "AWS", "Figma",
+]
+
+const processSteps = [
+  { number: "01", title: "Discovery & Wireframes", desc: "We audit your goals, audience, and competitors, then map out information architecture and wireframes for every key page." },
+  { number: "02", title: "UI/UX Design", desc: "High-fidelity designs in Figma with your brand palette, typography, and interactive prototypes validated through feedback rounds." },
+  { number: "03", title: "Development & Testing", desc: "Pixel-perfect code using modern frameworks, thorough cross-browser QA, performance optimization, and security hardening." },
+  { number: "04", title: "Launch & Support", desc: "Zero-downtime deployment, analytics setup, SEO configuration, and ongoing maintenance with 24/7 monitoring and support." },
+]
+
+const whyUs = [
+  { icon: "🚀", title: "Performance First", desc: "Every site ships with Lighthouse scores above 90, sub-second load times, and optimized Core Web Vitals." },
+  { icon: "🔒", title: "Security Built-In", desc: "OWASP-aligned security practices, HTTPS by default, input sanitization, and regular vulnerability scanning." },
+  { icon: "📱", title: "Fully Responsive", desc: "Mobile-first designs that look flawless on every screen size — from 320px phones to 4K ultrawide monitors." },
+  { icon: "🤝", title: "Dedicated Team", desc: "A senior developer, UI designer, and project manager assigned to your project with weekly progress reports." },
+]
+
+const statsData = [
+  { value: 200, suffix: "+", label: "Websites Delivered" },
+  { value: 95, suffix: "%", label: "Client Retention" },
+  { value: 99, suffix: "%", label: "Uptime Guarantee" },
+  { value: 3, suffix: "s", label: "Avg. Load Time" },
+]
+
+const StatCounter = ({ value, suffix, label }) => {
+  const ref = useRef(null)
+  const counted = useRef(false)
+  const startCount = useCallback(() => {
+    if (counted.current || !ref.current) return
+    counted.current = true
+    const el = ref.current
+    const duration = 2000
+    const start = performance.now()
+    const animate = (now) => {
+      const elapsed = now - start
+      const progress = Math.min(elapsed / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      el.textContent = Math.floor(eased * value) + suffix
+      if (progress < 1) requestAnimationFrame(animate)
+    }
+    requestAnimationFrame(animate)
+  }, [value, suffix])
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) startCount() },
+      { threshold: 0.5 }
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [startCount])
+
   return (
-    <div className="container">
-      <style jsx>{`
-        @keyframes gradientAnimation {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-        // ... (Keep your existing keyframes)
+    <div className="svc-stat-item">
+      <span className="svc-stat-number" ref={ref}>0{suffix}</span>
+      <span className="svc-stat-label">{label}</span>
+    </div>
+  )
+}
 
-        .container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 20px; // Increased padding
-          text-align: center;
-          background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-          background-size: 400% 400%;
-          animation: gradientAnimation 15s ease infinite;
-          color: white;
-          font-family: 'Arial', sans-serif;
-        }
+const WebDev = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) entry.target.classList.add('visible')
+        })
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    )
+    document.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
 
-        h1 {
-          font-weight: bold; // Make h1 bold
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); // Adding text shadow
-          margin-bottom: 1rem; // Add some space after the h1
-        }
+  return (
+    <>
+      <Head>
+        <title>Web Development — NOIWIC IT Solutions</title>
+        <meta name="description" content="High-performance websites and web applications built with React, Next.js, Node.js, and modern frameworks. From landing pages to complex SaaS platforms." />
+      </Head>
 
-        .section {
-          padding: 20px 0; // Add padding to sections
-        }
-
-        .text-background {
-          padding: 15px; // Increased padding for better readability
-          background-color: rgba(255, 255, 255, 0.1);
-          border-radius: 5px;
-          backdrop-filter: blur(5px);
-        }
-
-        .service {
-          padding: 10px; // Add padding to service sections
-          margin-bottom: 15px; // Add some margin to the bottom of service sections
-          transition: transform 0.3s ease-in-out;
-        }
-
-        .service:hover {
-          transform: scale(1.05);
-        }
-
-        // Media queries for mobile responsiveness
-        @media (max-width: 768px) {
-          .container {
-            padding: 15px;
-          }
-
-          h1, .section, .text-background, .service {
-            font-size: 90%; // Reduce font size for tablet screens
-          }
-
-          .text-background {
-            padding: 10px; // Slightly reduce padding for tablet screens
-          }
-        }
-
-        @media (max-width: 480px) {
-          .container {
-            padding: 10px;
-          }
-        
-          h1 {
-            font-size: 130%; // Increase font size for mobile screens
-            line-height: 1.2; // Adjust line height for better readability
-            color: #ffffff; // Example color that stands out
-          }
-        
-          .section, .text-background, .service {
-            font-size: 100%; // Adjusted font size for better readability
-          }
-        
-          .text-background {
-            padding: 10px;
-          }
-        }
-      `}</style>
-
-
-      <>
-     
-      {/* Introduction Section */}
-      <section className="section introduction">
-        <div className="typewriter">
-        <div className="text-background">
-          <h1>Noiwic Web Development</h1>
+      <section className="svc-detail-hero">
+        <div className="hero-video-bg">
+          <video autoPlay muted loop playsInline>
+            <source src="/14519720_3840_2160_25fps.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-video-overlay" />
         </div>
-        </div>
-        <div className="text-background">
-        <p>We specialize in creating state-of-the-art websites tailored to your business needs. Our expertise spans across static and dynamic websites, WordPress, Shopify, Wix, and custom functionality, all with a focus on mobile responsiveness</p>
-        </div>
-         </section>
-
-      {/* Services Overview */}
-      <section className="section services">
-      <div className="typewriter">
-      <div className="text-background">
-        <h1>Our Services</h1>
-        </div>
-        </div>
-
-        {/* Static Websites */}
-        <div className="service">
-        <div className="text-background">
-          <h1>Static Websites</h1>
-          <p>Our static websites are fast, secure, and easy to maintain, ideal for small businesses and personal portfolios.</p>
-        </div>
-        </div>
-
-        {/* Dynamic Websites */}
-        <div className="service">
-        <div className="text-background">
-          <h1>Dynamic Websites</h1>
-          <p>Offering interactive features, dynamic websites are perfect for sites requiring frequent updates.</p>
-        </div>
-        </div>
-
-        {/* WordPress Development */}
-        <div className="service">
-        <div className="text-background">
-          <h1>WordPress Development</h1>
-          <p>Expertise in creating versatile WordPress sites, from blogs to complex business solutions.</p>
-        </div>
-        </div>
-
-        {/* Shopify Development */}
-        <div className="service">
-        <div className="text-background">
-          <h1>Shopify Development</h1>
-          <p>Specializing in building e-commerce sites using Shopify, offering custom designs and functional online stores.</p>
-        </div>
-        </div>
-
-        {/* Wix Websites */}
-        <div className="service">
-        <div className="text-background">
-          <h1>Wix Websites</h1>
-          <p>Capable of crafting professional and responsive websites using Wix, tailored to your brand and business needs.</p>
-        </div>
-        </div>
-
-        {/* Functional Websites */}
-        <div className="service">
-        <div className="text-background">
-          <h1>Functional Websites</h1>
-          <p>Developing websites with specific functionalities to meet diverse business requirements.</p>
-        </div>
+        <div className="container">
+          <p className="svc-hero-eyebrow fade-in-up">Web Development</p>
+          <h1 className="svc-hero-title">
+            <span className="line-white fade-in-up stagger-1">Websites That</span>
+            <span className="line-cyan fade-in-up stagger-2">Perform & Convert</span>
+          </h1>
+          <p className="svc-hero-sub fade-in-up stagger-3">
+            We engineer high-performance websites and web applications that load in under 3 seconds,
+            rank on Google, and convert visitors into customers — built with the most powerful modern frameworks.
+          </p>
+          <div className="svc-hero-ctas fade-in-up stagger-4">
+            <a href={`https://wa.me/${phoneNumber}?text=${waMsg}`} target="_blank" rel="noopener noreferrer">
+              <button className="button-primary">Start Your Project</button>
+            </a>
+            <a href="#services">
+              <button className="button-ghost">View Services</button>
+            </a>
+          </div>
         </div>
       </section>
 
-</>
+      <section className="svc-detail-stats">
+        <div className="container">
+          <div className="svc-stats-grid">
+            {statsData.map((stat, i) => <StatCounter key={i} {...stat} />)}
+          </div>
+        </div>
+      </section>
 
+      <section className="svc-detail-services" id="services">
+        <div className="container">
+          <div className="heading-title">
+            <span className="eyebrow">What We Build</span>
+            <Title title="Web Development Services" />
+            <p>From single-page marketing sites to enterprise-grade web applications, every project is architected for performance, scalability, and long-term success.</p>
+          </div>
+          <div className="svc-services-grid">
+            {serviceItems.map((svc, i) => (
+              <div className={`svc-card fade-in-up stagger-${(i % 6) + 1}`} key={i}>
+                <div className="bracket-tl" />
+                <div className="bracket-br" />
+                <span className="svc-card-icon">{svc.icon}</span>
+                <h3 className="svc-card-title">{svc.title}</h3>
+                <p className="svc-card-desc">{svc.desc}</p>
+                <ul className="svc-card-features">
+                  {svc.features.map((f, j) => (
+                    <li key={j}><span className="feat-dot" />{f}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-</div>
-);
-};
+      <section className="svc-detail-tech">
+        <div className="container">
+          <div className="heading-title">
+            <span className="eyebrow">Our Stack</span>
+            <Title title="Technologies We Use" />
+            <p>We pick the right tool for the job — battle-tested frameworks and platforms trusted by industry leaders worldwide.</p>
+          </div>
+          <div className="tech-grid">
+            {techStack.map((tech, i) => (
+              <span className={`tech-pill fade-in-up stagger-${(i % 6) + 1}`} key={i}>
+                <span className="tech-dot" />{tech}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
 
-export default HomePage;
+      <section className="svc-detail-process">
+        <div className="container">
+          <div className="heading-title">
+            <span className="eyebrow">How It Works</span>
+            <Title title="Our Process" />
+            <p>A proven four-phase workflow that takes your project from concept to a production-ready, high-performing website.</p>
+          </div>
+          <div className="process-grid">
+            {processSteps.map((step, i) => (
+              <div className={`process-step fade-in-up stagger-${i + 1}`} key={i}>
+                <span className="step-number">{step.number}</span>
+                <h4 className="step-title">{step.title}</h4>
+                <p className="step-desc">{step.desc}</p>
+                {i < processSteps.length - 1 && <div className="step-connector" />}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="svc-detail-why">
+        <div className="container">
+          <div className="heading-title">
+            <span className="eyebrow">Why NOIWIC</span>
+            <Title title="Why Choose Us" />
+          </div>
+          <div className="why-grid">
+            {whyUs.map((item, i) => (
+              <div className={`why-card fade-in-up stagger-${i + 1}`} key={i}>
+                <span className="why-icon">{item.icon}</span>
+                <h4>{item.title}</h4>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="svc-detail-cta">
+        <div className="container">
+          <div className="cta-card">
+            <div className="bracket-tl" />
+            <div className="bracket-br" />
+            <h2>Ready to build your next website?</h2>
+            <p>Tell us about your project and get a free consultation with our senior development team.</p>
+            <div className="cta-buttons">
+              <a href={`https://wa.me/${phoneNumber}?text=${waMsg}`} target="_blank" rel="noopener noreferrer">
+                <button className="button-primary">Get Free Quote</button>
+              </a>
+              <a href="/contact">
+                <button className="button-ghost">Contact Us</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
+
+export default WebDev
