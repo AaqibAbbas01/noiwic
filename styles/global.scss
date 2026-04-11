@@ -2422,3 +2422,1007 @@ footer {
     font-size: 28px;
   }
 }
+
+// ========== Thank You Page ==========
+.thankyou-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 80px;
+
+  .thankyou-card {
+    position: relative;
+    background: $glass-bg;
+    border: 1px solid $glass-border;
+    border-radius: 16px;
+    padding: 60px 50px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(20px);
+
+    .bracket-tl,
+    .bracket-br {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+    }
+
+    .bracket-tl {
+      top: -1px;
+      left: -1px;
+      border-top: 2px solid $cyan;
+      border-left: 2px solid $cyan;
+    }
+
+    .bracket-br {
+      bottom: -1px;
+      right: -1px;
+      border-bottom: 2px solid $gold;
+      border-right: 2px solid $gold;
+    }
+
+    .thankyou-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba($cyan, 0.15);
+      border: 2px solid $cyan;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 36px;
+      color: $cyan;
+    }
+
+    h1 {
+      font-family: $font-display;
+      font-size: 36px;
+      color: $white;
+      margin-bottom: 16px;
+    }
+
+    .thankyou-sub {
+      color: $muted;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .thankyou-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .thankyou-redirect {
+      color: rgba($muted, 0.7);
+      font-size: 13px;
+      font-family: $font-mono;
+    }
+  }
+}
+
+// ========== Project Modal ==========
+.project-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.project-modal {
+  position: relative;
+  background: $surface;
+  border: 1px solid $glass-border;
+  border-radius: 16px;
+  padding: 40px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  backdrop-filter: blur(20px);
+
+  .bracket-tl,
+  .bracket-br {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+  }
+
+  .bracket-tl {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid $cyan;
+    border-left: 2px solid $cyan;
+  }
+
+  .bracket-br {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid $gold;
+    border-right: 2px solid $gold;
+  }
+
+  .project-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: $muted;
+    font-size: 28px;
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+
+    &:hover {
+      color: $cyan;
+    }
+  }
+
+  h2 {
+    font-family: $font-display;
+    font-size: 24px;
+    color: $white;
+    margin-bottom: 8px;
+  }
+
+  .project-modal-sub {
+    color: $muted;
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .pm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .pm-field {
+    margin-bottom: 16px;
+
+    label {
+      display: block;
+      color: $muted;
+      font-size: 13px;
+      font-family: $font-mono;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba($dark, 0.8);
+      border: 1px solid $border;
+      border-radius: 8px;
+      color: $white;
+      font-size: 14px;
+      font-family: $font-body;
+      transition: border-color 0.3s;
+      outline: none;
+
+      &:focus {
+        border-color: $cyan;
+      }
+
+      &::placeholder {
+        color: rgba($muted, 0.5);
+      }
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235a7a9a' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+
+      option {
+        background: $surface;
+        color: $white;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+  }
+
+  .form-error {
+    color: $red;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+}
+
+// ========== Chat Bubble & Window ==========
+.chat-bubble {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $cyan, #0088cc);
+  border: none;
+  color: $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9990;
+  box-shadow: 0 4px 20px rgba(0, 200, 255, 0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: pulse-glow 2s ease-in-out infinite;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 30px rgba(0, 200, 255, 0.6);
+  }
+
+  &.chat-bubble-hidden {
+    transform: scale(0);
+    pointer-events: none;
+  }
+}
+
+.chat-window {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 400px;
+  height: 520px;
+  background: $surface;
+  border: 1px solid $glass-border;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  z-index: 9995;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+
+  .chat-window-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: rgba($dark, 0.9);
+    border-bottom: 1px solid $border;
+
+    .chat-header-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chat-header-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, $cyan, #0088cc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: $font-display;
+      font-size: 14px;
+      font-weight: 700;
+      color: $white;
+    }
+
+    .chat-header-title {
+      display: block;
+      font-family: $font-display;
+      font-size: 13px;
+      color: $white;
+      letter-spacing: 1px;
+    }
+
+    .chat-header-status {
+      display: block;
+      font-size: 11px;
+      color: #4caf50;
+      margin-top: 2px;
+    }
+
+    .chat-window-close {
+      background: none;
+      border: none;
+      color: $muted;
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 0;
+
+      &:hover {
+        color: $cyan;
+      }
+    }
+  }
+
+  .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba($cyan, 0.3);
+      border-radius: 4px;
+    }
+  }
+
+  .chat-msg {
+    display: flex;
+    animation: message-appear 0.3s ease;
+
+    &.chat-msg-user {
+      justify-content: flex-end;
+
+      .chat-msg-bubble {
+        background: rgba($cyan, 0.15);
+        border: 1px solid rgba($cyan, 0.3);
+        border-radius: 16px 16px 4px 16px;
+        color: $white;
+      }
+    }
+
+    &.chat-msg-bot {
+      justify-content: flex-start;
+
+      .chat-msg-bubble {
+        background: rgba($surface-light, 0.8);
+        border: 1px solid $border;
+        border-radius: 16px 16px 16px 4px;
+        color: rgba($white, 0.9);
+      }
+    }
+
+    .chat-msg-bubble {
+      max-width: 85%;
+      padding: 10px 16px;
+      font-size: 13.5px;
+      line-height: 1.6;
+      word-wrap: break-word;
+
+      strong {
+        color: $cyan;
+      }
+
+      &.chat-typing {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 14px 20px;
+
+        .typing-dot {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background: $cyan;
+          animation: typing-dot 1.4s ease-in-out infinite;
+
+          &:nth-child(2) {
+            animation-delay: 0.2s;
+          }
+
+          &:nth-child(3) {
+            animation-delay: 0.4s;
+          }
+        }
+      }
+    }
+  }
+
+  .chat-input-bar {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    border-top: 1px solid $border;
+    background: rgba($dark, 0.6);
+    gap: 8px;
+
+    input {
+      flex: 1;
+      padding: 10px 14px;
+      background: rgba($dark, 0.8);
+      border: 1px solid $border;
+      border-radius: 24px;
+      color: $white;
+      font-size: 13.5px;
+      outline: none;
+      font-family: $font-body;
+
+      &:focus {
+        border-color: $cyan;
+      }
+
+      &::placeholder {
+        color: rgba($muted, 0.6);
+      }
+    }
+
+    .chat-send-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, $cyan, #0088cc);
+      border: none;
+      color: $white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: opacity 0.3s;
+
+      &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+// ========== Responsive: Modal & Chat ==========
+@media screen and (max-width: 768px) {
+  .project-modal {
+    padding: 30px 20px;
+    max-height: 95vh;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .pm-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  .chat-window {
+    width: calc(100% - 16px);
+    height: calc(100% - 100px);
+    bottom: 8px;
+    right: 8px;
+    border-radius: 12px;
+  }
+
+  .chat-bubble {
+    bottom: 16px;
+    right: 16px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .thankyou-page .thankyou-card {
+    padding: 40px 24px;
+
+    h1 {
+      font-size: 28px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .chat-window {
+    width: 100%;
+    height: calc(100vh - 60px);
+    bottom: 0;
+    right: 0;
+    border-radius: 16px 16px 0 0;
+  }
+
+  .project-modal-overlay {
+    padding: 10px;
+  }
+}
+
+// ========== Admin: Loading ==========
+.admin-loading {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $dark;
+}
+
+.admin-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid $border;
+  border-top-color: $cyan;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+// ========== Admin: Login ==========
+.admin-login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  .admin-login-card {
+    position: relative;
+    background: $glass-bg;
+    border: 1px solid $glass-border;
+    border-radius: 16px;
+    padding: 48px 40px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(20px);
+
+    .bracket-tl,
+    .bracket-br {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+    }
+
+    .bracket-tl {
+      top: -1px;
+      left: -1px;
+      border-top: 2px solid $cyan;
+      border-left: 2px solid $cyan;
+    }
+
+    .bracket-br {
+      bottom: -1px;
+      right: -1px;
+      border-bottom: 2px solid $gold;
+      border-right: 2px solid $gold;
+    }
+
+    .admin-login-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, $cyan, #0088cc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-family: $font-display;
+      font-size: 24px;
+      font-weight: 700;
+      color: $white;
+    }
+
+    h1 {
+      font-family: $font-display;
+      font-size: 24px;
+      color: $white;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    p {
+      color: $muted;
+      font-size: 14px;
+      margin-bottom: 28px;
+    }
+
+    form {
+      text-align: left;
+    }
+  }
+}
+
+.admin-field {
+  margin-bottom: 18px;
+
+  label {
+    display: block;
+    color: $muted;
+    font-size: 12px;
+    font-family: $font-mono;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba($dark, 0.8);
+    border: 1px solid $border;
+    border-radius: 8px;
+    color: $white;
+    font-size: 14px;
+    font-family: $font-body;
+    outline: none;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: $cyan;
+    }
+
+    &::placeholder {
+      color: rgba($muted, 0.5);
+    }
+  }
+}
+
+.admin-error {
+  color: $red;
+  font-size: 13px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+// ========== Admin: Dashboard ==========
+.admin-dashboard {
+  min-height: 100vh;
+  padding: 100px 32px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  .admin-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .admin-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    h1 {
+      font-family: $font-display;
+      font-size: 28px;
+      color: $white;
+      letter-spacing: 2px;
+    }
+
+    .admin-badge {
+      background: rgba($cyan, 0.15);
+      border: 1px solid rgba($cyan, 0.3);
+      color: $cyan;
+      font-size: 11px;
+      font-family: $font-mono;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  .admin-header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .admin-refresh {
+    background: rgba($surface-light, 0.6);
+    border: 1px solid $border;
+    color: $muted;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: $cyan;
+      color: $cyan;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
+  }
+
+  .admin-logout {
+    background: none;
+    border: 1px solid rgba($red, 0.4);
+    color: $red;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: $font-mono;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+
+    &:hover {
+      background: rgba($red, 0.1);
+      border-color: $red;
+    }
+  }
+}
+
+// ========== Admin: Stats ==========
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+
+  .admin-stat-card {
+    background: $glass-bg;
+    border: 1px solid $glass-border;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+
+    .admin-stat-number {
+      display: block;
+      font-family: $font-display;
+      font-size: 32px;
+      color: $cyan;
+      margin-bottom: 6px;
+    }
+
+    .admin-stat-label {
+      color: $muted;
+      font-size: 13px;
+      font-family: $font-mono;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+}
+
+// ========== Admin: Tabs ==========
+.admin-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid $border;
+  padding-bottom: 0;
+
+  button {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: $muted;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-family: $font-body;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      color: $white;
+    }
+
+    &.active {
+      color: $cyan;
+      border-bottom-color: $cyan;
+    }
+  }
+}
+
+// ========== Admin: Table ==========
+.admin-table-loading,
+.admin-empty {
+  text-align: center;
+  color: $muted;
+  padding: 60px 20px;
+  font-size: 15px;
+  font-family: $font-mono;
+}
+
+.admin-table-wrap {
+  overflow-x: auto;
+  border: 1px solid $glass-border;
+  border-radius: 12px;
+  background: $glass-bg;
+  backdrop-filter: blur(10px);
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba($cyan, 0.3);
+    border-radius: 4px;
+  }
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+
+  thead {
+    th {
+      background: rgba($dark, 0.6);
+      color: $muted;
+      font-family: $font-mono;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 14px 16px;
+      text-align: left;
+      white-space: nowrap;
+      border-bottom: 1px solid $border;
+      font-weight: 500;
+    }
+  }
+
+  tbody {
+    tr {
+      cursor: pointer;
+      transition: background 0.2s;
+
+      &:hover {
+        background: rgba($cyan, 0.04);
+      }
+
+      &.expanded {
+        background: rgba($cyan, 0.06);
+      }
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba($border, 0.5);
+      }
+    }
+
+    td {
+      padding: 12px 16px;
+      color: rgba($white, 0.85);
+      vertical-align: top;
+      white-space: nowrap;
+
+      a {
+        color: $cyan;
+        text-decoration: none;
+        text-transform: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .admin-type-badge {
+    background: rgba($gold, 0.12);
+    border: 1px solid rgba($gold, 0.3);
+    color: $gold;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-family: $font-mono;
+    white-space: nowrap;
+  }
+}
+
+.admin-detail-row {
+  cursor: default !important;
+
+  &:hover {
+    background: rgba($cyan, 0.02) !important;
+  }
+
+  td {
+    padding: 0 !important;
+  }
+
+  .admin-detail-content {
+    padding: 16px 24px 20px;
+    border-top: 1px dashed rgba($cyan, 0.15);
+    background: rgba($dark, 0.3);
+
+    strong {
+      color: $cyan;
+      font-family: $font-mono;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: rgba($white, 0.8);
+      font-size: 14px;
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 0;
+    }
+  }
+}
+
+// ========== Admin: Responsive ==========
+@media screen and (max-width: 768px) {
+  .admin-dashboard {
+    padding: 90px 16px 40px;
+
+    .admin-header-left h1 {
+      font-size: 22px;
+    }
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    .admin-stat-card {
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: left;
+
+      .admin-stat-number {
+        font-size: 24px;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .admin-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    button {
+      padding: 10px 16px;
+      font-size: 13px;
+      white-space: nowrap;
+    }
+  }
+
+  .admin-login-page .admin-login-card {
+    padding: 36px 24px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .admin-dashboard .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-stats .admin-stat-card .admin-stat-number {
+    font-size: 20px;
+  }
+}

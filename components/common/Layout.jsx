@@ -1,9 +1,17 @@
 import Footer from "./Footer"
 import Header from "./Header"
 import ParticleCanvas from "../ParticleCanvas"
-import { useEffect } from "react"
+import ProjectModal from "../ProjectModal"
+import ChatBot from "../ChatBot"
+import ModalContext from "@/lib/ModalContext"
+import { useEffect, useState, useCallback } from "react"
 
 const Layout = (props) => {
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const openModal = useCallback(() => setModalOpen(true), [])
+  const closeModal = useCallback(() => setModalOpen(false), [])
+
   useEffect(() => {
     if (typeof window === 'undefined') return
     if (window.innerWidth < 768) return
@@ -38,13 +46,15 @@ const Layout = (props) => {
   }, [])
 
   return (
-    <>
+    <ModalContext.Provider value={openModal}>
       <ParticleCanvas />
       <div className="scanline-overlay" />
-      <Header />
+      <Header onOpenModal={openModal} />
       <main style={{ position: 'relative', zIndex: 1 }}>{props.children}</main>
       <Footer />
-    </>
+      <ProjectModal isOpen={modalOpen} onClose={closeModal} />
+      <ChatBot />
+    </ModalContext.Provider>
   )
 }
 

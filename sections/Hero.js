@@ -4,6 +4,7 @@ import AIAgents from "@/components/AIAgents"
 import Testimonial from "@/components/Testimonial"
 import TechTicker from "@/components/TechTicker"
 import { useEffect, useRef, useCallback } from "react"
+import { useModal } from "@/lib/ModalContext"
 
 const statsData = [
   { value: 10, suffix: "+", label: "Years of Experience" },
@@ -12,8 +13,6 @@ const statsData = [
   { value: 12, suffix: "+", label: "Countries Served" },
 ]
 
-const phoneNumber = '9818404363'
-const message = encodeURIComponent("Hi, I'd like to discuss a project with NOIWIC IT Solutions.")
 
 const StatCounter = ({ value, suffix, label }) => {
   const ref = useRef(null)
@@ -55,6 +54,7 @@ const StatCounter = ({ value, suffix, label }) => {
 }
 
 const Hero = () => {
+  const onOpenModal = useModal()
   useEffect(() => {
     const elements = document.querySelectorAll('.fade-in-up')
     const observer = new IntersectionObserver(
@@ -99,9 +99,7 @@ const Hero = () => {
             <a href="#showcase">
               <button className="button-primary">View Our Work</button>
             </a>
-            <a href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer">
-              <button className="button-ghost">Start a Project</button>
-            </a>
+            <button className="button-ghost" onClick={onOpenModal}>Start a Project</button>
           </div>
         </div>
 

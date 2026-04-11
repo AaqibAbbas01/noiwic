@@ -1,7 +1,9 @@
 import { useState } from "react"
+import { useRouter } from "next/router"
 import { Title } from "@/components/common/Title"
 
 const Contact = () => {
+  const router = useRouter()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -9,32 +11,38 @@ const Contact = () => {
     timeframe: '',
     projectDetails: ''
   })
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState('')
 
   const phoneNumber = '9818404363'
+  const waMessage = encodeURIComponent("Hi, I'd like to discuss a project with NOIWIC IT Solutions.")
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const message = `Greetings,
+    setSubmitting(true)
+    setError('')
 
-I am reaching out to discuss a potential project collaboration. Below are my details:
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      })
 
-- Name: ${formData.name}
-- Email: ${formData.email}
-- Proposed Budget: INR ${formData.budget}
-- Project Timeframe: ${formData.timeframe} days
-- Project Details: ${formData.projectDetails}
+      if (!res.ok) {
+        const data = await res.json()
+        throw new Error(data.error || 'Something went wrong')
+      }
 
-I look forward to discussing how we can work together effectively.
-
-Best regards,
-${formData.name}`
-    const encodedMessage = encodeURIComponent(message)
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
-    window.open(whatsappUrl, '_blank')
+      router.push('/thankyou')
+    } catch (err) {
+      setError(err.message)
+      setSubmitting(false)
+    }
   }
 
   return (
@@ -104,7 +112,20 @@ ${formData.name}`
                 <span>Tell us about your project</span>
                 <textarea cols='30' rows='10' name='projectDetails' value={formData.projectDetails} onChange={handleChange} required></textarea>
               </div>
-              <button className='button-primary' type='submit'>Submit</button>
+              {error && <p className="form-error" style={{ color: '#ff4d4d', marginBottom: '1rem', fontSize: '0.9rem' }}>{error}</p>}
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+                <button className='button-primary' type='submit' disabled={submitting}>
+                  {submitting ? 'Sending...' : 'Submit'}
+                </button>
+                <a
+                  href={`https://wa.me/${phoneNumber}?text=${waMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ color: '#00e5ff', fontSize: '0.85rem', textDecoration: 'underline' }}
+                >
+                  Prefer WhatsApp?
+                </a>
+              </div>
             </form>
           </div>
         </div>

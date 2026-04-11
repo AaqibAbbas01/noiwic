@@ -3,12 +3,9 @@ import { TitleLogo } from "./Title"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
-const Header = () => {
+const Header = ({ onOpenModal }) => {
   const [activeLink, setActiveLink] = useState("")
   const [open, setOpen] = useState(false)
-
-  const phoneNumber = '9818404363'
-  const message = encodeURIComponent("Hi, I'd like to discuss a project with NOIWIC IT Solutions.")
 
   const router = useRouter()
   useEffect(() => {
@@ -40,9 +37,7 @@ const Header = () => {
             Contact
           </Link>
           <span className="nav-cta">
-            <a href={`https://wa.me/${phoneNumber}?text=${message}`} target="_blank" rel="noopener noreferrer">
-              <button className='button-primary'>Book a Call</button>
-            </a>
+            <button className='button-primary' onClick={onOpenModal}>Start a Project</button>
           </span>
         </nav>
         <button className="menu-toggle" onClick={() => setOpen(!open)}>
