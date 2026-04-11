@@ -6,10 +6,10 @@ const TeamPage = () => {
     <>
       <Head>
         <title>Team — NOIWIC IT Solutions</title>
-        <meta name="description" content="Meet the talented team behind NOIWIC IT Solutions — experienced developers, designers, and strategists passionate about building world-class digital products." />
+        <meta name="description" content="Meet the founders behind NOIWIC IT Solutions — visionaries passionate about building world-class digital products and empowering businesses globally." />
         <link rel="canonical" href="https://noiwic.com/team" />
-        <meta property="og:title" content="Our Team — NOIWIC IT Solutions" />
-        <meta property="og:description" content="Meet the talented team behind NOIWIC IT Solutions — experienced developers, designers, and strategists." />
+        <meta property="og:title" content="Our Founders — NOIWIC IT Solutions" />
+        <meta property="og:description" content="Meet the founders behind NOIWIC IT Solutions — visionaries passionate about building world-class digital products." />
         <meta property="og:url" content="https://noiwic.com/team" />
       </Head>
       <Team />

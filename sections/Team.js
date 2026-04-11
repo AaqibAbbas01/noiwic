@@ -8,10 +8,10 @@ const Team = () => {
       <section className='agency bg-top'>
         <div className='container'>
           <div className='heading-title'>
-            <span className='eyebrow'>MEET OUR TEAM</span>
-            <Title title='A team of smart & passionate creatives' className='title-bg' />
+            <span className='eyebrow'>MEET THE FOUNDERS</span>
+            <Title title='The visionaries behind NOIWIC' className='title-bg' />
           </div>
-          <div className='grid-4 py'>
+          <div className='grid-3 py'>
             {teamdata.map((item) => (
               <Card data={item} key={item.id} caption={item.post} />
             ))}

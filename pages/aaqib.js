@@ -10,9 +10,9 @@ const Aaqib = () => {
         <div className="profile-content">
           <img src='/images/ceo.jpg' alt='Aaqib Abbas' className="profile-img" />
           <h1>Aaqib Abbas</h1>
-          <h2>Founder & CTO</h2>
+          <h2>Founder</h2>
           <p>
-            With an illustrious career spanning over 7 years in the ever-evolving realm of Information Technology, I am both honored and thrilled to serve as the Co-Founder and CTO of Noiwic. My professional journey has been defined by an unwavering commitment to innovation, a relentless pursuit of excellence, and an innate understanding of the rapidly shifting technological landscape.
+            With an illustrious career spanning over 7 years in the ever-evolving realm of Information Technology, I am both honored and thrilled to serve as the Founder of Noiwic. My professional journey has been defined by an unwavering commitment to innovation, a relentless pursuit of excellence, and an innate understanding of the rapidly shifting technological landscape.
           </p>
           <p>
             Throughout my tenure in the industry, I have had the privilege of spearheading an array of transformative projects. These endeavors have ranged from pioneering web and app development ventures to crafting seamless and immersive E-commerce experiences.

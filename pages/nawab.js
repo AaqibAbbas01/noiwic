@@ -10,9 +10,9 @@ const Nawab = () => {
         <div className="profile-content">
           <img src='/images/cmo.jpg' alt='Nawab Khan' className="profile-img" />
           <h1>Nawab Khan</h1>
-          <h2>Founder & CMO</h2>
+          <h2>Co-Founder</h2>
           <p>
-            At the helm of Noiwic, I proudly assume the role of CMO and Founder, bringing to the table over 8 years of immersive experience in our dynamic industry.
+            At the helm of Noiwic, I proudly assume the role of Co-Founder, bringing to the table over 8 years of immersive experience in our dynamic industry.
           </p>
           <p>
             With a fervent commitment to innovation, I lead a team that thrives on pushing boundaries and delivering exceptional solutions.

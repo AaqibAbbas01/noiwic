@@ -131,25 +131,19 @@ export const teamdata = [
     id: "aaqib",
     title: "Aaqib Abbas",
     cover: "../images/founder.png",
-    post: "FOUNDER, CTO",
+    post: "FOUNDER",
   },
   {
     id: "nawab",
     title: "Nawab Khan",
     cover: "../images/cmo.jpg",
-    post: "FOUNDER, CMO",
+    post: "CO-FOUNDER",
   },
   {
-    id: "imad",
-    title: "Muhammad Imad",
-    cover: "../images/cofounder.jpg",
-    post: "CO-FOUNDER, CEO",
-  },
-  {
-    id: "contact",
-    title: "Join our team!",
-    cover: "../images/t8.jpg",
-    post: "",
+    id: "asif",
+    title: "Asif Hussain",
+    cover: "../images/asif.png",
+    post: "CO-FOUNDER",
   },
 ]
 
