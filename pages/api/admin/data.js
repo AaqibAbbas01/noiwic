@@ -39,7 +39,14 @@ export default async function handler(req, res) {
       LIMIT 200
     `
 
-    return res.status(200).json({ contacts, projects })
+    const planInquiries = await sql`
+      SELECT id, name, email, phone, company, plan_name, plan_price, plan_ideal, created_at
+      FROM plan_inquiries
+      ORDER BY created_at DESC
+      LIMIT 200
+    `
+
+    return res.status(200).json({ contacts, projects, planInquiries })
   } catch (error) {
     return res.status(500).json({ error: 'Failed to fetch data' })
   }

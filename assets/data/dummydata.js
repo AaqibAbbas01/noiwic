@@ -50,6 +50,13 @@ export const services = [
     highlighted: true,
     link: "/crm",
   },
+  {
+    icon: "🧪",
+    title: "Automation Testing",
+    desc: "Enterprise-grade QA automation with Playwright, Cypress, AI-powered testing, CI/CD pipelines, and legacy framework migration.",
+    highlighted: true,
+    link: "/automation-testing",
+  },
 ]
 
 export const projects = [

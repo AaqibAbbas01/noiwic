@@ -12,6 +12,7 @@ const serviceLinks = {
   "Branding & Identity": "/branding",
   "SaaS Development": "/saas",
   "CRM & Analytics": "/crm",
+  "Automation Testing": "/automation-testing",
 }
 
 const Services = () => {

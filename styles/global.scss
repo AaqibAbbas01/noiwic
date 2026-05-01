@@ -2095,6 +2095,377 @@ footer {
 }
 
 /* ═══════════════════════════════════
+   PRICING CARDS
+   ═══════════════════════════════════ */
+.svc-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: $xll;
+  align-items: start;
+}
+
+.svc-pricing-card {
+  background: $glass-bg;
+  backdrop-filter: blur(12px);
+  border: 1px solid $glass-border;
+  padding: 40px 36px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    border-color: rgba($cyan, 0.3);
+    transform: translateY(-4px);
+  }
+
+  &.pricing-highlighted {
+    border-color: rgba($cyan, 0.45);
+    background: rgba($cyan, 0.04);
+    box-shadow: 0 0 40px rgba($cyan, 0.08);
+
+    .pricing-tier-name {
+      color: $cyan;
+    }
+  }
+
+  .svc-featured-tag {
+    position: absolute;
+    top: -1px;
+    right: 24px;
+    background: $cyan;
+    color: $dark;
+    font-family: $font-display;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 5px 14px;
+    text-transform: uppercase;
+  }
+
+  .bracket-tl, .bracket-br {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+  }
+  .bracket-tl {
+    top: -1px;
+    left: -1px;
+    border-top: 2px solid $cyan;
+    border-left: 2px solid $cyan;
+  }
+  .bracket-br {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 2px solid $cyan;
+    border-right: 2px solid $cyan;
+  }
+}
+
+.pricing-tier-name {
+  font-family: $font-display;
+  font-size: $xl-3;
+  font-weight: 700;
+  color: $white;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.pricing-tier-ideal {
+  font-family: $font-body;
+  font-size: $sm;
+  color: $muted;
+  margin-bottom: 24px;
+}
+
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid $glass-border;
+}
+
+.pricing-amount {
+  font-family: $font-display;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 800;
+  color: $cyan;
+  letter-spacing: 1px;
+}
+
+.pricing-period {
+  font-family: $font-body;
+  font-size: $sm;
+  color: $muted;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: $font-body;
+    font-size: $sm;
+    color: rgba($white, 0.75);
+    line-height: 1.5;
+  }
+
+  .feat-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: $cyan;
+    flex-shrink: 0;
+  }
+}
+
+.pricing-cta-link {
+  display: block;
+  text-decoration: none;
+
+  button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ═══════════════════════════════════
+   PLAN INQUIRY MODAL
+   ═══════════════════════════════════ */
+.pim-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.pim-modal {
+  position: relative;
+  background: $surface;
+  border: 1px solid rgba($cyan, 0.2);
+  padding: 44px 40px 40px;
+  max-width: 620px;
+  width: 100%;
+  max-height: 92vh;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba($cyan, 0.2) transparent;
+
+  .bracket-tl, .bracket-br {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+  }
+  .bracket-tl {
+    top: -1px; left: -1px;
+    border-top: 2px solid $cyan;
+    border-left: 2px solid $cyan;
+  }
+  .bracket-br {
+    bottom: -1px; right: -1px;
+    border-bottom: 2px solid $gold;
+    border-right: 2px solid $gold;
+  }
+}
+
+.pim-close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: none;
+  border: none;
+  color: $muted;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.25s;
+
+  &:hover { color: $cyan; }
+}
+
+.pim-plan-badge {
+  display: inline-block;
+  font-family: $font-mono;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: $cyan;
+  background: rgba($cyan, 0.08);
+  border: 1px solid rgba($cyan, 0.2);
+  padding: 5px 14px;
+  margin-bottom: 16px;
+}
+
+.pim-title {
+  font-family: $font-display;
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 700;
+  color: $white;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.pim-ideal {
+  font-family: $font-body;
+  font-size: $sm;
+  color: $muted;
+  margin-bottom: 20px;
+}
+
+.pim-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.pim-amount {
+  font-family: $font-display;
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 800;
+  color: $cyan;
+}
+
+.pim-period {
+  font-family: $font-body;
+  font-size: $sm;
+  color: $muted;
+}
+
+.pim-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: $font-body;
+    font-size: $sm;
+    color: rgba($white, 0.72);
+  }
+
+  .feat-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: $cyan;
+    flex-shrink: 0;
+  }
+}
+
+.pim-divider {
+  height: 1px;
+  background: $glass-border;
+  margin-bottom: 28px;
+}
+
+.pim-form-heading {
+  font-family: $font-body;
+  font-size: $sm;
+  color: $muted;
+  margin-bottom: 20px;
+}
+
+.pim-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pim-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.pim-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-family: $font-mono;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: $muted;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba($dark, 0.85);
+    border: 1px solid $border;
+    color: $white;
+    font-family: $font-body;
+    font-size: $sm;
+    outline: none;
+    transition: border-color 0.25s;
+
+    &::placeholder { color: rgba($muted, 0.6); }
+    &:focus { border-color: rgba($cyan, 0.45); }
+  }
+}
+
+.pim-submit {
+  width: 100%;
+  margin-top: 4px;
+  justify-content: center;
+}
+
+.pim-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 0 8px;
+  text-align: center;
+
+  .pim-success-icon {
+    font-size: 40px;
+  }
+
+  p {
+    font-family: $font-body;
+    font-size: $md;
+    color: rgba($white, 0.8);
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .pim-modal {
+    padding: 36px 20px 28px;
+  }
+
+  .pim-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════
    PARTICLE CANVAS
    ═══════════════════════════════════ */
 .particle-canvas {
@@ -2311,6 +2682,14 @@ footer {
 
   .svc-detail-services .svc-services-grid {
     grid-template-columns: 1fr;
+  }
+
+  .svc-pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-pricing-card {
+    padding: 32px 24px;
   }
 
   .svc-detail-process .process-grid {

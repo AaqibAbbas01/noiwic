@@ -32,6 +32,20 @@ export default async function handler(req, res) {
       )
     `
 
+    await sql`
+      CREATE TABLE IF NOT EXISTS plan_inquiries (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        phone VARCHAR(50),
+        company VARCHAR(255),
+        plan_name VARCHAR(100) NOT NULL,
+        plan_price VARCHAR(50),
+        plan_ideal VARCHAR(255),
+        created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+      )
+    `
+
     return res.status(200).json({ message: 'Tables created successfully' })
   } catch (error) {
     return res.status(500).json({ error: 'Failed to create tables', details: error.message })
