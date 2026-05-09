@@ -14,15 +14,9 @@ export default function Document() {
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
 
-        {/* Default OG Tags (overridden per page via next/head) */}
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="NOIWIC IT Solutions" />
-        <meta property="og:locale" content="en_US" />
-
-        {/* Twitter Card Defaults */}
-        <meta name="twitter:card" content="summary_large_image" />
+        {/* Twitter Defaults */}
         <meta name="twitter:site" content="@noiwic" />
 
         {/* Theme & Mobile */}
@@ -30,7 +24,6 @@ export default function Document() {
         <meta name="msapplication-TileColor" content="#020408" />
 
         {/* SEO Extras */}
-        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
         <meta name="author" content="NOIWIC IT Solutions" />
         <meta name="publisher" content="NOIWIC IT Solutions" />
         <meta name="geo.region" content="IN-DL" />

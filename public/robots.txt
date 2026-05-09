@@ -1,5 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /admin
+Disallow: /thankyou
 
 Sitemap: https://noiwic.com/sitemap.xml

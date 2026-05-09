@@ -1,29 +1,8 @@
 import { blogdata } from "@/assets/data/dummydata"
 import { Title } from "@/components/common/Title"
 import Head from "next/head"
-import { useRouter } from "next/router"
 
-const SinglePost = () => {
-  const router = useRouter()
-  const { id } = router.query
-  const post = blogdata.find((p) => p.id === parseInt(id))
-
-  if (!post) {
-    return (
-      <div style={{ padding: '120px 0', textAlign: 'center' }}>
-        <Head>
-          <title>Post Not Found — NOIWIC IT Solutions</title>
-        </Head>
-        <div className="container">
-          <Title title="Post Not Found" />
-          <p style={{ color: '#5a7a9a', marginTop: '20px' }}>
-            This blog post could not be found. Please go back to the blog list.
-          </p>
-        </div>
-      </div>
-    )
-  }
-
+const SinglePost = ({ post }) => {
   return (
     <>
       <Head>
@@ -43,6 +22,21 @@ const SinglePost = () => {
       </section>
     </>
   )
+}
+
+export const getStaticPaths = async () => ({
+  paths: blogdata.map((post) => ({
+    params: { id: String(post.id) },
+  })),
+  fallback: false,
+})
+
+export const getStaticProps = async ({ params }) => {
+  const post = blogdata.find((item) => String(item.id) === String(params.id))
+
+  return {
+    props: { post },
+  }
 }
 
 export default SinglePost
