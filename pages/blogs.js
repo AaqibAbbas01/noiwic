@@ -7,10 +7,10 @@ const Blogs = () => {
       <Head>
         <title>Blog — NOIWIC IT Solutions</title>
         <meta name="description" content="Read the latest insights on web development, mobile apps, AI agents, SaaS, digital marketing, and emerging tech trends from the NOIWIC IT Solutions team." />
-        <link rel="canonical" href="https://noiwic.com/blogs" />
+        <link rel="canonical" href="https://www.noiwic.com/blogs" />
         <meta property="og:title" content="Blog — NOIWIC IT Solutions" />
         <meta property="og:description" content="Insights on web development, mobile apps, AI agents, SaaS, digital marketing, and emerging tech trends." />
-        <meta property="og:url" content="https://noiwic.com/blogs" />
+        <meta property="og:url" content="https://www.noiwic.com/blogs" />
       </Head>
       <Blog />
     </>

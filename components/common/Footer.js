@@ -15,7 +15,7 @@ const Footer = () => {
             <div className='contact-info'>
               <p><a href='tel:+918595900509'>+91 8595900509</a></p>
               <p><a href='tel:+919818404363'>+91 9818404363</a></p>
-              <p><a href='https://noiwic.com' target='_blank' rel='noopener noreferrer'>noiwic.com</a></p>
+              <p><a href='https://www.noiwic.com' target='_blank' rel='noopener noreferrer'>noiwic.com</a></p>
               <p>Plot 28, Mehrauli - Badarpur Rd, Saiyad Ul Ajaib Village, Sainik Farm, New Delhi, Delhi 110030</p>
             </div>
             <div className='footer-whatsapp'>

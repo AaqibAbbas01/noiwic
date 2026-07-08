@@ -4,4 +4,4 @@ Disallow: /api/
 Disallow: /admin
 Disallow: /thankyou
 
-Sitemap: https://noiwic.com/sitemap.xml
+Sitemap: https://www.noiwic.com/sitemap.xml

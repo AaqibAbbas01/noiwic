@@ -1,12 +1,9 @@
 export const TitleLogo = ({ title, caption, className }) => {
-  const noiwic = title || 'NOIWIC'
-  const noi = noiwic.slice(0, 3)
-  const wic = noiwic.slice(3)
   return (
-    <h1 className={`${className || ''} title-logo`}>
-      {caption && <span>{caption}</span>}
-      {noi}<span className="gold">{wic}</span>
-    </h1>
+    <span className={`${className || ''} title-logo`}>
+      {caption && <span className="logo-caption">{caption}</span>}
+      <img src="/images/noiwic-tech-logo.png" alt={`${title || 'NOIWIC'} Tech`} className="logo-mark" />
+    </span>
   )
 }
 

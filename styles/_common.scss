@@ -1,23 +1,35 @@
 @import "function";
 
 .title-logo {
-  font-family: $font-display;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: $cyan;
-  .gold {
-    color: $gold;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+
+  .logo-mark {
+    display: block;
+    width: 180px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .logo-caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
   }
 }
 .logobg {
-  font-size: $xll;
-  .gold {
-    font-size: 50px;
+  .logo-mark {
+    width: 260px;
   }
 }
 .logomin {
-  font-size: 1.6rem;
+  .logo-mark {
+    width: 150px;
+  }
 }
 .titleSm {
   font-size: $xl-3;
